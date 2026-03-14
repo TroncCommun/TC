@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Réglementaire : Tronc Commun S1-S3 | WBE 2026</title>
+    
+    <!-- Moteur de recherche Lunr.js -->
+    <script src="https://unpkg.com/lunr@2.3.9/lunr.min.js"></script>
+    <script src="https://unpkg.com/lunr-languages@1.10.0/lunr.stemmer.support.js"></script>
+    <script src="https://unpkg.com/lunr-languages@1.10.0/lunr.fr.js"></script>
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Couleurs de base */
+            --ink: #0f1923;
+            --ink-light: #4a5568;
+            --ink-muted: #8896a8;
+            
+            --surface: #f7f8fa;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            
+            /* Thème institutionnel WBE */
+            --blue: #1a56db;
+            --blue-light: #e8f0fd;
+            --blue-dark: #0f3694;
+            
+            /* Statuts & Catégories */
+            --amber: #d97706;
+            --amber-light: #fef3c7;
+            
+            --green: #059669;
+            --green-light: #d1fae5;
+            
+            --violet: #7c3aed;
+            --violet-light: #ede9fe;
+            
+            --red: #dc2626;
+            --red-light: #fee2e2;
+
+            /* Ombres et Radii */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+            --radius: 14px;
+            --radius-sm: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Sora', sans-serif;
+            background: var(--surface);
+            color: var(--ink);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ================= HEADER ================= */
+        .site-header {
+            background: var(--ink);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hbg {
+            position: absolute; inset: 0;
+            background-image: 
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px),
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px);
+            pointer-events: none;
+        }
+
+        .hi {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px 48px;
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-wrap {
+            background: white;
+            border-radius: 12px;
+            padding: 10px 14px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .logo-wrap img { height: 80px; width: auto; display: block; }
+
+        .hc { flex: 1; }
+        
+        .heyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .hc h1 {
+            font-size: 1.85em;
+            font-weight: 800;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .hc p {
+            font-size: 0.95em;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+        }
+
+        .hmeta {
+            display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;
+        }
+
+        .pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75em;
+            font-weight: 600;
+            background: rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.85);
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: #34d399; }
+        
+        /* Bouton Informations Techniques */
+        .info-btn {
+            position: absolute;
+            top: 24px;
+            right: 48px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.75em;
+            font-weight: 600;
+            font-family: 'Sora', sans-serif;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+
+        .info-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+
+        /* ================= DISCLAIMER ================= */
+        .disclaimer {
+            background: var(--amber-light);
+            border-bottom: 1px solid #fcd34d;
+        }
+        
+        .di {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 14px 48px;
+            display: flex; align-items: flex-start; gap: 12px;
+            font-size: 0.88em;
+            color: #78350f;
+            line-height: 1.55;
+        }
+
+        /* ================= MAIN ================= */
+        .mw {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 36px 48px;
+        }
+
+        /* ================= STATS ================= */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .sc {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            display: flex; align-items: center; gap: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sc:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+        .si {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+
+        .si.blue { background: var(--blue-light); }
+        .si.green { background: var(--green-light); }
+        .si.amber { background: var(--amber-light); }
+        .si.violet { background: var(--violet-light); }
+
+        .sv { font-size: 1.7em; font-weight: 800; line-height: 1; color: var(--ink); }
+        .sl { font-size: 0.78em; color: var(--ink-muted); margin-top: 3px; font-weight: 500; }
+
+        /* ================= CONTROLS ================= */
+        .cp {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sw { position: relative; margin-bottom: 18px; }
+        
+        .sicon {
+            position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+            color: var(--ink-muted); font-size: 1em; pointer-events: none;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 13px 16px 13px 44px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: 'Sora', sans-serif;
+            font-size: 0.93em;
+            color: var(--ink);
+            background: var(--surface);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-bar:focus {
+            border-color: var(--blue);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(26,86,219,0.1);
+        }
+
+        .sclear {
+            position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+            background: var(--border); border: none; border-radius: 50%;
+            width: 22px; height: 22px; cursor: pointer;
+            font-size: 0.75em; color: var(--ink-muted);
+            display: none; align-items: center; justify-content: center;
+        }
+        .sclear.visible { display: flex; }
+
+        .fr { display: flex; flex-direction: column; gap: 12px; }
+        .fri { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        
+        .fl {
+            font-size: 0.72em; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.2px; color: var(--ink-muted);
+            min-width: 75px; flex-shrink: 0;
+        }
+
+        .fchips { display: flex; gap: 6px; flex-wrap: wrap; }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            
+            min-height: 32px;
+            height: 32px;
+            box-sizing: border-box; 
+            
+            padding: 0 14px;
+            border-radius: 100px;
+            border: 1.5px solid var(--border);
+            background: white;
+            font-size: 0.78em; 
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--ink-light);
+            transition: all 0.15s;
+            font-family: 'Sora', sans-serif;
+            white-space: nowrap;
+            line-height: normal; 
+        }
+
+        .chip:hover { border-color: var(--blue); color: var(--blue); }
+        
+        .chip.active { 
+            background: var(--blue); 
+            color: white !important; 
+            border: 1.5px solid var(--blue); 
+        }
+
+        /* ================= RESULTS HDR ================= */
+        .rh {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .rc { font-size: 0.85em; color: var(--ink-muted); font-weight: 600; }
+        .rc strong { color: var(--ink); }
+
+        .vt {
+            display: flex; gap: 4px;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 8px; padding: 3px;
+        }
+
+        .vb {
+            padding: 5px 10px; border: none; background: transparent; border-radius: 5px;
+            cursor: pointer; font-size: 0.85em; color: var(--ink-muted);
+            transition: all 0.15s; font-family: 'Sora', sans-serif;
+        }
+
+        .vb.active { background: white; color: var(--ink); box-shadow: var(--shadow-sm); }
+
+        /* ================= GRID ================= */
+        .cg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+            gap: 20px;
+        }
+        
+        .cg-grid.lv { grid-template-columns: 1fr; }
+
+        /* ================= CARD ================= */
+        .reg-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: flex; flex-direction: column; cursor: pointer;
+        }
+
+        .reg-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(26,86,219,0.2);
+        }
+
+        .cb { height: 4px; background: var(--blue); flex-shrink: 0; }
+        .cb.b { background: var(--blue); }
+        .cb.g { background: var(--green); }
+        .cb.a { background: var(--amber); }
+        .cb.v { background: var(--violet); }
+        .cb.r { background: var(--red); }
+
+        .cbody { padding: 22px 24px; flex: 1; display: flex; flex-direction: column; }
+
+        .cmeta {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .ct {
+            font-size: 0.68em; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.2px; padding: 3px 8px; border-radius: 4px;
+        }
+
+        .ct.b { background: var(--blue-light); color: var(--blue-dark); }
+        .ct.g { background: var(--green-light); color: #065f46; }
+        .ct.a { background: var(--amber-light); color: #92400e; }
+        .ct.v { background: var(--violet-light); color: #5b21b6; }
+        .ct.r { background: var(--red-light); color: #991b1b; }
+
+        .cbadges { display: flex; gap: 6px; align-items: center; }
+
+        .yt {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7em; font-weight: 600; padding: 2px 8px;
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 4px; color: var(--ink-light);
+        }
+
+        .st { font-size: 0.68em; font-weight: 700; padding: 2px 8px; border-radius: 4px; color: white; }
+        .st.vg { background: var(--green); }
+        .st.pr { background: var(--amber); }
+        .st.tr { background: var(--violet); }
+
+        .ctitle {
+            font-size: 1.02em; font-weight: 700; line-height: 1.35;
+            color: var(--ink); margin-bottom: 16px;
+        }
+
+        .csect { margin-bottom: 14px; }
+        .csecth { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+        
+        .sdot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+        .sdot.gr { background: #cbd5e1; }
+        .sdot.b { background: var(--blue); }
+        .sdot.g { background: var(--green); }
+        .sdot.a { background: var(--amber); }
+        .sdot.v { background: var(--violet); }
+        .sdot.r { background: var(--red); }
+
+        .slabel {
+            font-size: 0.7em; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--ink-muted);
+        }
+
+        .csect p { font-size: 0.88em; line-height: 1.65; color: var(--ink-light); }
+
+        .cfoot {
+            margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border);
+            display: flex; flex-direction: column; gap: 10px;
+        }
+
+        .impbox {
+            background: #fffbeb; border: 1px solid #fde68a;
+            border-radius: var(--radius-sm); padding: 10px 13px;
+            font-size: 0.82em; color: #78350f; line-height: 1.55;
+        }
+        .impbox strong { color: var(--amber); }
+
+        .srcline {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.72em; color: var(--ink-muted);
+        }
+
+        /* ================= TABLES ================= */
+        .grid-table {
+            width: 100%; border-collapse: collapse; font-size: 0.84em;
+            border-radius: 8px; overflow: hidden; margin: 8px 0; border: 1px solid var(--border);
+        }
+        .grid-table thead tr { background: var(--ink); color: white; }
+        .grid-table th { padding: 8px 10px; text-align: center; font-weight: 700; font-size: 0.9em; }
+        .grid-table td { padding: 6px 10px; border: 1px solid var(--border); text-align: center; }
+        .grid-table td:first-child { text-align: left; font-weight: 500; }
+        .grid-table tr:nth-child(even) { background: var(--surface); }
+        .grid-table .sub-row td:first-child { padding-left: 22px; color: var(--ink-muted); font-style: italic; font-weight: 400; }
+        .grid-table tfoot td {
+            background: var(--blue-light); font-weight: 800;
+            color: var(--blue-dark); border-top: 2px solid var(--blue);
+        }
+        .grid-note { font-size: 0.8em; color: var(--ink-muted); margin-top: 8px; line-height: 1.6; }
+
+        /* ================= MODAL ================= */
+        .mo {
+            position: fixed; inset: 0; background: rgba(10,15,25,0.72);
+            backdrop-filter: blur(6px); z-index: 1000; display: none;
+            align-items: center; justify-content: center; padding: 24px;
+            animation: fadeIn 0.2s ease;
+        }
+        .mo.open { display: flex; }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+        .mb {
+            background: white; border-radius: 20px; width: 100%; max-width: 740px;
+            max-height: 88vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+            animation: slideUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @keyframes slideUp { from{transform:translateY(30px) scale(0.97); opacity:0} to{transform:translateY(0) scale(1); opacity:1} }
+
+        .mh {
+            padding: 28px 32px 24px; border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; background: white; border-radius: 20px 20px 0 0;
+            display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+        }
+        
+        .mhl { flex: 1; }
+        .mtitle { font-size: 1.2em; font-weight: 800; color: var(--ink); line-height: 1.3; }
+
+        .mclose {
+            width: 36px; height: 36px; background: var(--surface); border: 1px solid var(--border);
+            border-radius: 50%; cursor: pointer; font-size: 1em; color: var(--ink-muted);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            transition: background 0.15s;
+        }
+        .mclose:hover { background: var(--border); }
+
+        .mc { padding: 24px 32px 32px; }
+
+        .mst { margin-bottom: 24px; }
+        .msth {
+            font-size: 0.72em; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.3px; color: var(--ink-muted); margin-bottom: 10px;
+            padding-bottom: 8px; border-bottom: 1px solid var(--border);
+        }
+        .mst p, .mst div { font-size: 0.93em; line-height: 1.7; color: var(--ink-light); }
+
+        .malert {
+            background: var(--amber-light); border: 1px solid #fcd34d;
+            border-radius: var(--radius-sm); padding: 14px 16px;
+            font-size: 0.9em; color: #78350f; line-height: 1.6;
+        }
+        .msrc {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.8em; color: var(--ink-muted);
+            background: var(--surface); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: 10px;
+        }
+
+        /* ================= CHAT ================= */
+        .chat-section { margin-top: 52px; }
+        .stitle { font-size: 1.25em; font-weight: 800; color: var(--ink); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+        .ssub { font-size: 0.88em; color: var(--ink-muted); margin-bottom: 24px; }
+
+        .cl { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; height: 560px; }
+
+        .cpanel {
+            background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+            display: flex; flex-direction: column; box-shadow: var(--shadow-sm); overflow: hidden;
+        }
+
+        .cph {
+            padding: 16px 20px; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; gap: 10px; flex-shrink: 0; background: var(--surface);
+        }
+        
+        .ptt { font-weight: 700; font-size: 0.9em; color: var(--ink); }
+        .pts { font-size: 0.75em; color: var(--ink-muted); }
+
+        .od { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 0 2px rgba(16,185,129,0.25); flex-shrink: 0; }
+
+        .chat-messages {
+            flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 12px; scroll-behavior: smooth;
+        }
+        .chat-messages::-webkit-scrollbar { width: 5px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        .msg { padding: 11px 15px; border-radius: 12px; max-width: 85%; font-size: 0.88em; line-height: 1.6; }
+        .msg-bot { background: var(--surface); border: 1px solid var(--border); align-self: flex-start; border-bottom-left-radius: 3px; color: var(--ink); }
+        .msg-user { background: var(--blue); color: white; align-self: flex-end; border-bottom-right-radius: 3px; }
+
+        .msg-typing { display: flex; gap: 5px; align-items: center; padding: 12px 16px; }
+        .tdot { width: 7px; height: 7px; background: var(--ink-muted); border-radius: 50%; animation: tb 1.2s infinite; }
+        .tdot:nth-child(2) { animation-delay: 0.2s; }
+        .tdot:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes tb { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
+
+        .schips {
+            padding: 12px 16px; border-top: 1px solid var(--border); display: flex; gap: 6px; flex-wrap: wrap; background: var(--surface); flex-shrink: 0;
+        }
+        .schip {
+            background: white; border: 1px solid var(--border); border-radius: 100px; padding: 4px 12px; font-size: 0.76em; font-weight: 600; cursor: pointer; color: var(--ink-light); font-family: 'Sora', sans-serif; transition: all 0.15s;
+        }
+        .schip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+        .ciw { padding: 14px 16px; border-top: 1px solid var(--border); display: flex; gap: 10px; flex-shrink: 0; }
+        .ci {
+            flex: 1; padding: 10px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: 'Sora', sans-serif; font-size: 0.88em; color: var(--ink); outline: none; transition: border-color 0.2s; background: var(--surface);
+        }
+        .ci:focus { border-color: var(--blue); background: white; }
+        
+        .csend {
+            background: var(--blue); color: white; border: none; padding: 10px 18px; border-radius: var(--radius-sm); cursor: pointer; font-weight: 700; font-size: 0.85em; font-family: 'Sora', sans-serif; transition: background 0.2s, transform 0.1s; display: flex; align-items: center; gap: 6px;
+        }
+        .csend:hover { background: var(--blue-dark); }
+        .csend:active { transform: scale(0.97); }
+
+        .dpc { flex: 1; overflow-y: auto; padding: 16px; }
+        .dpc::-webkit-scrollbar { width: 5px; }
+        .dpc::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+        .dc {
+            background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px;
+            cursor: pointer; 
+            transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+        }
+        .dc:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            background: white;
+        }
+        
+        .dc .dcat { font-size: 0.68em; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-muted); margin-bottom: 4px; }
+        .dc h3 { font-size: 0.95em; font-weight: 700; color: var(--ink); margin-bottom: 10px; line-height: 1.35; }
+        .dc .dbody { font-size: 0.84em; color: var(--ink-light); line-height: 1.65; }
+        .dc .dal { font-size: 0.82em; color: #dc2626; margin-top: 8px; line-height: 1.5; }
+
+        .es { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 10px; color: var(--ink-muted); text-align: center; padding: 30px; }
+        .ei { font-size: 2.5em; opacity: 0.4; }
+        .et { font-size: 0.85em; line-height: 1.6; }
+
+        /* ================= EMPTY STATE ================= */
+        .nr { grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--ink-muted); }
+        .nr .nri { font-size: 2.5em; margin-bottom: 12px; }
+        .nr .nrt { font-size: 1.1em; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+        .nr .nrs { font-size: 0.88em; }
+
+        /* ================= SCROLL TOP ================= */
+        .stbtn {
+            position: fixed; bottom: 28px; left: 28px; width: 42px; height: 42px; background: var(--card); border: 1px solid var(--border); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; font-size: 1em; color: var(--ink-muted); z-index: 100;
+        }
+        .stbtn.v { opacity: 1; pointer-events: auto; }
+        .stbtn:hover { transform: translateY(-2px); }
+
+        /* ================= RESPONSIVE ================= */
+        @media(max-width: 1100px) {
+            .mw { padding: 28px 24px; }
+            .hi { padding: 24px; }
+            .di { padding: 12px 24px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .cl { grid-template-columns: 1fr; height: auto; }
+            .cpanel { height: 420px; }
+        }
+
+        @media(max-width: 680px) {
+            .hi { flex-direction: column; }
+            .cg-grid { grid-template-columns: 1fr; }
+            .stats-bar { grid-template-columns: 1fr 1fr; }
+            .info-btn {
+                position: relative;
+                top: 0; right: 0;
+                align-self: flex-start;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="hbg"></div>
+    <div class="hi">
+        <div class="logo-wrap">
+            <img src="https://www.wbe.be/fileadmin/sites/wbe/uploads/images/Communaute_WBE/Logos_WBE_20210901/logos_vertical/WBE_logos_vertical.jpg" alt="Logo WBE">
+        </div>
+        <div class="hc">
+            <div class="heyebrow">Wallonie-Bruxelles-Enseignement • Outil à destination des Directions</div>
+            <h1>Base Réglementaire<br>Tronc Commun S1-S3</h1>
+            <p>Référence pour l'organisation du Degré Inférieur • Rentrée 2026-2027</p>
+            <div class="hmeta">
+                <span class="pill"><span class="pill-dot"></span>Version Février 2026</span>
+                <span class="pill">🏛️ WBE</span>
+                <span class="pill">📄 23 fiches réglementaires</span>
+            </div>
+        </div>
+        <!-- Bouton Informations Techniques -->
+        <button class="info-btn" onclick="openInfoModal()">
+            <span>ℹ️</span> Informations techniques et pratiques
+        </button>
+    </div>
+</header>
+
+<div class="disclaimer">
+    <div class="di">
+        <span style="font-size:1.2em; flex-shrink:0; margin-top:1px;">⚠️</span>
+        <span>Les fiches <strong>« Accord / Projet »</strong> reflètent les dernières orientations du Gouvernement FWB (MR-Engagés), dont la suppression de la LM2 obligatoire et la révision des grilles S2/S3. Ces textes organisent la rentrée 2026 mais <strong>n'ont pas encore achevé leur parcours parlementaire</strong>.</span>
+    </div>
+</div>
+
+<div class="mw">
+    <!-- STATS -->
+    <div class="stats-bar" id="statsBar"></div>
+
+    <!-- CONTROLS -->
+    <div class="cp">
+        <div class="sw">
+            <span class="sicon">🔍</span>
+            <input type="text" id="searchInput" class="search-bar" placeholder="Rechercher par sujet, mot-clé, article (ex : AP, DAccE, numérique, grille...)">
+            <button class="sclear" id="clearBtn" onclick="clearSearch()">✕</button>
+        </div>
+        <div class="fr">
+            <div class="fri"><span class="fl">Années</span><div class="fchips" id="yearFilters"></div></div>
+            <div class="fri"><span class="fl">Catégories</span><div class="fchips" id="catFilters"></div></div>
+            <div class="fri"><span class="fl">Statuts</span><div class="fchips" id="statusFilters"></div></div>
+        </div>
+    </div>
+
+    <!-- HEADER RES -->
+    <div class="rh">
+        <div class="rc" id="resultsCount"></div>
+        <div class="vt">
+            <button class="vb active" id="gridBtn" onclick="setView('grid')">▦ Grille</button>
+            <button class="vb" id="listBtn" onclick="setView('list')">☰ Liste</button>
+        </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="cg-grid" id="cardGrid"></div>
+
+    <!-- CHATBOT -->
+    <div class="chat-section">
+        <div class="stitle">🤖 Agent de Recherche Intelligent</div>
+        <div class="ssub">Posez une question en langage naturel : l'agent identifie et synthétise les fiches réglementaires pertinentes.</div>
+        
+        <div class="cl">
+            <!-- CHAT PANEL -->
+            <div class="cpanel">
+                <div class="cph">
+                    <span class="od"></span>
+                    <div><div class="ptt">Assistant réglementaire</div><div class="pts">Réponse basée sur les 23 fiches</div></div>
+                </div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="schips" id="suggestChips"></div>
+                <div class="ciw">
+                    <input type="text" id="chatInput" class="ci" placeholder="Votre question..." onkeypress="if(event.key==='Enter') handleChat()">
+                    <button class="csend" onclick="handleChat()"><span>Envoyer</span><span>➤</span></button>
+                </div>
+            </div>
+
+            <!-- DETAIL PANEL -->
+            <div class="cpanel">
+                <div class="cph" style="background:white;">
+                    <span>📄</span>
+                    <div><div class="ptt">Fiches sources mobilisées</div><div class="pts">Résultats identifiés</div></div>
+                </div>
+                <div class="dpc" id="chatDetails">
+                    <div class="es"><div class="ei">📚</div><div class="et">Les fiches réglementaires correspondant à votre question apparaîtront ici.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div class="mo" id="mo" onclick="closeModal(event)">
+    <div class="mb" id="mb">
+        <div class="mh">
+            <div class="mhl"><div id="mmeta" style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;"></div><div class="mtitle" id="mtitle"></div></div>
+            <button class="mclose" onclick="document.getElementById('mo').classList.remove('open');document.body.style.overflow='';">✕</button>
+        </div>
+        <div class="mc" id="mc"></div>
+    </div>
+</div>
+
+<button class="stbtn" id="stbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ================= DATA =================
+const DB = [
+    {
+        "id": "gh_grilles_ref",
+        "annees": "S1-S2-S3",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Grille horaire de référence WBE",
+        "statut": "Accord / Projet",
+        "actuelle": "Le volume total au Tronc Commun est de 32 périodes hebdomadaires de 50 minutes.",
+        "future": `<table class="grid-table"><thead><tr><th>Discipline</th><th>S1</th><th>S2</th><th>S3</th></tr></thead><tbody><tr style="background:#fffbeb;"><td>EPC</td><td>1</td><td>1</td><td>1</td></tr><tr style="background:#fffbeb;"><td>Religion / Morale</td><td>1</td><td>1</td><td>1</td></tr><tr style="background:#fffbeb;"><td>Français</td><td>6</td><td>4</td><td>4</td></tr><tr style="background:#fffbeb;"><td>Langues anciennes</td><td>-</td><td>2</td><td>1</td></tr><tr style="background:#fffbeb;"><td>Langue moderne I*</td><td>4</td><td>4</td><td>4</td></tr><tr style="background:#fffbeb;"><td>Mathématiques</td><td>5</td><td>5</td><td>4</td></tr><tr style="background:#fffbeb;"><td>Sciences</td><td>3</td><td>3</td><td>3</td></tr><tr style="background:#fef3c7;"><td><strong>FMTTN (Total)</strong></td><td>3</td><td>3</td><td>0</td></tr><tr class="sub-row"><td>↳ FMTT</td><td>1</td><td>1</td><td>0</td></tr><tr class="sub-row"><td>↳ Numérique</td><td>2</td><td>2</td><td>0</td></tr><tr style="background:#fffbeb;"><td>FHGES</td><td>4</td><td>4</td><td>4</td></tr><tr style="background:#fffbeb;"><td>Éd. culturelle et artistique</td><td>2</td><td>2</td><td>2</td></tr><tr style="background:#fffbeb;"><td>Éd. physique et santé</td><td>3</td><td>3</td><td>2</td></tr><tr style="background:#fef3c7;"><td>Module d'orientation</td><td>-</td><td>-</td><td>8</td></tr></tbody><tfoot><tr><td>Total disciplinaire</td><td>32</td><td>32</td><td>32</td></tr></tfoot></table><div class="grid-note"><strong>*LM2 :</strong> Retirée de la grille obligatoire. Subsiste comme module optionnel en S3.<br><strong>S1 :</strong> Le cours de langues anciennes est compris dans le cours de Français.<br><strong>S3 :</strong> Organisation de 8 périodes obligatoires de module d'orientation & disparition du bloc FMTTN.</div>`,
+        "source": "APD S1 – Art. 1, 1° / Référentiels disciplinaires FWB",
+        "alerte": "Nouvelle organisation des cours - respect des consignes de WBE."
+    },
+    {
+        "id": "aeo_global",
+        "annees": "S1-S2-S3",
+        "categorie": "Orientation",
+        "sujet": "Approche Éducative de l'Orientation : 128 périodes",
+        "statut": "Accord / Projet",
+        "actuelle": "Au niveau primaire, l'orientation s'intègre de manière transversale dans les apprentissages sans périodes spécifiquement dédiées.",
+        "future": "Au Degré Inférieur, le décret consacre officiellement <strong>128 périodes dédiées à l'orientation</strong> : <strong>48 périodes intégrées aux cours</strong> (activités menées au sein des disciplines) et <strong>80 périodes hors cours</strong> (visites d'entreprises, salons d'orientation). L'intensité se renforce progressivement de S1 vers S3. Ce cadre <strong>ne modifie pas la grille horaire de 32 périodes</strong>.",
+        "source": "Décret du 16/05/2024",
+        "alerte": "Il est recommandé d'anticiper la planification des 80 périodes hors cours dès le début d'année scolaire."
+    },
+    {
+        "id": "lm1_choix",
+        "annees": "S1",
+        "categorie": "Grilles & Horaires",
+        "sujet": "LM1 : Choix de la langue à l'entrée en S1",
+        "statut": "Accord / Projet",
+        "actuelle": "L'élève poursuit en S1 la langue moderne apprise durant son parcours en enseignement primaire.",
+        "future": "Dès 2026-2027, les parents peuvent, <strong>moyennant l'avis favorable du directeur</strong>, choisir lors de l'inscription en S1 un cours de langue moderne différent de celui suivi en primaire.",
+        "source": "APD S1",
+        "alerte": "La décision relève du directeur, au cas par cas. Impact possible sur les emplois du temps et groupes-classes."
+    },
+    {
+        "id": "imm_bruxelles",
+        "annees": "S1",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Immersion linguistique à Bruxelles",
+        "statut": "Accord / Projet",
+        "actuelle": "Dans le contexte bruxellois, la Langue Moderne I est obligatoirement le néerlandais.",
+        "future": "La double immersion (NL/EN) reste autorisée. Règles strictes : le <strong>néerlandais reste la seule LM1 reconnue</strong> (4 périodes) ; <strong>pas de cours d'anglais autonome</strong> possible en S1 ; l'anglais s'enseigne <strong>uniquement via l'immersion</strong> dans d'autres disciplines.",
+        "source": "APD S1 + Règles immersion FWB",
+        "alerte": "L'organisation d'une double immersion NL/EN en S1 nécessite une planification horaire particulièrement rigoureuse."
+    },
+    {
+        "id": "imm_double",
+        "annees": "S1-S2-S3",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Double Immersion : plage horaire",
+        "statut": "Accord / Projet",
+        "actuelle": "La double immersion au Degré Inférieur devait couvrir au moins 8 et au plus 12 périodes par langue.",
+        "future": "Le plancher est abaissé : la partie immersive doit couvrir <strong>au minimum 6 périodes et au maximum 13 périodes</strong> hebdomadaires, offrant plus de souplesse sans imposer un second cours de langue.",
+        "source": "Code Art. 2.2.4-1 / APD S1 Art. 3",
+        "alerte": "Cette modification (de 8 à 6 périodes) ne concerne que la double immersion. L'immersion simple conserve son plancher à 8 périodes."
+    },
+    {
+        "id": "fhges_orga",
+        "annees": "S1-S2-S3",
+        "categorie": "Grilles & Horaires",
+        "sujet": "FHGES : Formation Historique, Géographique, Économique et Sociale",
+        "statut": "Accord / Projet",
+        "actuelle": "Les disciplines des sciences humaines sont organisées comme des cours séparés avec des enseignants distincts.",
+        "future": "Le référentiel FHGES fusionne 4 disciplines en un bloc de <strong>4 périodes par semaine</strong>. Deux modalités : <strong>cours unique</strong> (un seul enseignant) ou <strong>cours partagé</strong> (deux enseignants de 2 périodes chacun).",
+        "source": "APD S1 + Référentiel FHGES",
+        "alerte": "Le choix d'organisation relève du Pouvoir Organisateur (WBE). Si le cours est partagé, un dialogue régulier est indispensable pour la cohérence pédagogique."
+    },
+    {
+        "id": "eca_orga",
+        "annees": "S1-S2",
+        "categorie": "Grilles & Horaires",
+        "sujet": "ECA : Éducation Culturelle et Artistique",
+        "statut": "Accord / Projet",
+        "actuelle": "L'organisation des cours artistiques est variable selon les écoles.",
+        "future": "Le cours d'ECA est prévu à <strong>2 périodes hebdomadaires</strong> (S1 et S2), intégrant obligatoirement expression française et corporelle, expression plastique, et expression musicale. Les trois langages doivent être travaillés chaque année.",
+        "source": "APD S1 + Référentiel ECA",
+        "alerte": "À ce stade, il n'existe pas de certificat ECA permettant d'élargir les compétences vers un autre volet. La répartition se fait selon les titres disponibles."
+    },
+    {
+        "id": "numerique",
+        "annees": "S1-S2",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Formation au Numérique : 2 périodes + DigComp 3.0",
+        "statut": "Accord / Projet",
+        "actuelle": "La formation numérique est intégrée au référentiel FMTTN sans allocation horaire distincte.",
+        "future": "Le volet numérique est détaché et porté à <strong>2 périodes hebdomadaires distinctes en S1 et S2</strong>. Contenu vers <strong>DigComp 3.0</strong> (2027-2028) : IA explicite, IA implicite, cybersécurité, lutte contre la désinformation, bien-être numérique.",
+        "source": "APD S1 + Annexe FMTTN",
+        "alerte": "Un certificat (12 ECTS) sera organisé pour permettre la reconversion des enseignants en perte de charge vers la fonction CT Numérique DI."
+    },
+    {
+        "id": "fmtt",
+        "annees": "S1-S2",
+        "categorie": "Grilles & Horaires",
+        "sujet": "FMTT : Formation Manuelle, Technique et Technologique",
+        "statut": "Accord / Projet",
+        "actuelle": "Le bloc FMTTN est un cours combiné de 3 périodes.",
+        "future": "Avec la scission du bloc, la composante FMTT est réduite à <strong>1 période hebdomadaire en S1 et S2</strong>. Les quatre champs (alimentation/habitat, techniques de culture, matières/matériaux, objets technologiques) sont maintenus.",
+        "source": "APD S1 + Annexe FMTTN",
+        "alerte": "Des formations IFPC sont prévues. Des mesures transitoires protègent les enseignants en perte de charge dans la fonction CT Éducation par la technologie DI."
+    },
+    {
+        "id": "dace_principe",
+        "annees": "S1-S2-S3",
+        "categorie": "Parcours & Évaluation",
+        "sujet": "DAccE : Dossier d'Accompagnement de l'Élève",
+        "statut": "Accord / Projet",
+        "actuelle": "Dans l'enseignement ordinaire, le suivi individualisé est variable. Dans le spécialisé, il s'opère via le PIA.",
+        "future": "Le DAccE est un <strong>dossier numérique individuel</strong> créé dès l'entrée dans le Tronc Commun, qui suit l'élève même en cas de changement d'établissement. Il <strong>remplace le PIA dans l'ordinaire</strong>. Trois <strong>bilans de synthèse obligatoires</strong> par an (Toussaint, Carnaval, juin). Accès via <strong>Mon Espace FWB</strong>.",
+        "source": "APD S1 – Art. 15 et Art. 24",
+        "alerte": "Le DAccE sera opérationnel pour la rentrée 2026. La direction doit impérativement paramétrer les droits d'accès dans l'outil MODE avant la rentrée."
+    },
+    {
+        "id": "specialise_s1",
+        "annees": "S1",
+        "categorie": "Structures & Inscriptions",
+        "sujet": "Enseignement Spécialisé Forme 4 en S1",
+        "statut": "Accord / Projet",
+        "actuelle": "Les élèves de la Forme 4 suivent leur parcours dans un cadre distinct avec encadrement préférentiel.",
+        "future": "La réforme s'applique à la Forme 4 tout en conservant ses spécificités : AP et AR <strong>ne s'appliquent pas</strong> ; priorité à l'inscription pour les élèves issus du spécialisé ; les échecs en LM en S1/S2 ne sont pas pris en compte.",
+        "source": "Circulaire 9215 + APD S1",
+        "alerte": "Les directeurs doivent anticiper dès les inscriptions les demandes d'IPT et les passages dans l'ordinaire."
+    },
+    {
+        "id": "ap_orga",
+        "annees": "S1",
+        "categorie": "Accompagnement (AP/AR)",
+        "sujet": "AP : Accompagnement Personnalisé – Organisation",
+        "statut": "Accord / Projet",
+        "actuelle": "L'accompagnement personnalisé est assuré pour l'équivalent de 2 périodes par semaine.",
+        "future": "Le dispositif AP met un <strong>second enseignant à disposition du groupe-classe</strong>. Balises clés : accompagnement <strong>de préférence au sein de la classe</strong> (co-enseignement) ; <strong>interdiction</strong> de constituer des groupes homogènes permanents ; si des élèves sont extraits, <strong>le titulaire ne peut pas avancer dans la matière</strong>.",
+        "source": "Code – Art. 2.2.1-4, §3 / Art. 2.2.3-2, §2",
+        "alerte": "L'école est dans l'obligation de communiquer aux parents en début d'année les modalités concrètes d'organisation de l'AP."
+    },
+    {
+        "id": "ap_financement",
+        "annees": "S1",
+        "categorie": "Accompagnement (AP/AR)",
+        "sujet": "AP : Calcul du financement 2026-2027",
+        "statut": "Accord / Projet",
+        "actuelle": "Le financement de l'AP s'opère via l'encadrement classique de l'établissement.",
+        "future": "Mécanisme spécifique 2026-2027 : <strong>1 période-professeur générée par tranche entamée de 19 élèves</strong> inscrits en 1re année commune (comptage au 15 janvier). Ces périodes doivent être affectées <strong>exclusivement à l'AP</strong>.",
+        "source": "APD S1 – Art. 11 (Art. 16sexies/1)",
+        "alerte": "Le diviseur de 19 élèves est issu de l'avant-projet. Il doit être confirmé lors du vote budgétaire final."
+    },
+    {
+        "id": "ar_orga",
+        "annees": "S1",
+        "categorie": "Accompagnement (AP/AR)",
+        "sujet": "AR : Accompagnement Renforcé – Public cible",
+        "statut": "Accord / Projet",
+        "actuelle": "Il n'existe pas de dispositif AR structurel dans la grille actuelle du 1er degré.",
+        "future": "L'AR est destiné aux élèves admis en S1 sans CEB, ayant obtenu <strong>moins de 50%</strong> à une partie du CEB, ou <strong>moins de 60% au total</strong>. Ces élèves sont <strong>répartis dans toutes les classes</strong> ordinaires. <strong>Interdiction formelle de former des classes homogènes</strong>.",
+        "source": "APD S1 – Art. 6 et Art. 8",
+        "alerte": "Si un sous-groupe AR est extrait temporairement, le titulaire ne peut en aucun cas avancer dans la matière avec les élèves restants."
+    },
+    {
+        "id": "ar_financement",
+        "annees": "S1",
+        "categorie": "Accompagnement (AP/AR)",
+        "sujet": "AR : Enveloppe de 10.000 périodes FWB",
+        "statut": "Accord / Projet",
+        "actuelle": "Non applicable dans la configuration actuelle.",
+        "future": "Une <strong>enveloppe fermée de 10.000 périodes</strong> est réservée à l'échelle FWB pour financer l'AR. Calcul : <strong>0,5 période par élève</strong> inscrit au 15/01 concerné par un échec CEB. Une formule de lissage (N_final) s'applique si le total FWB diffère de l'enveloppe.",
+        "source": "APD S1 – Art. 12 (Art. 16sexies/1bis)",
+        "alerte": "Le calcul définitif est réalisé par l'Administration centrale. Ces moyens sont exclusivement réservés à la remédiation AR."
+    },
+    {
+        "id": "eval_examens",
+        "annees": "S1",
+        "categorie": "Parcours & Évaluation",
+        "sujet": "Examens de passage : interdiction totale en S1",
+        "statut": "Accord / Projet",
+        "actuelle": "Les examens de passage sont tolérés dans certaines conditions strictes.",
+        "future": "Dès la rentrée 2026, les examens de passage <strong>ne peuvent EN AUCUN CAS être organisés en S1</strong>. L'évaluation devient <strong>strictement continue et formative</strong>. Seule une <strong>décision de maintien exceptionnelle</strong> en fin d'année est possible. Il n'existe plus de seconde session en septembre.",
+        "source": "APD S1 – Art. 13 (modifiant Art. 1.9.3-2, §1er)",
+        "alerte": "Cette mesure implique une révision profonde des pratiques évaluatives en S1. La communication aux équipes doit être faite bien en amont de la rentrée."
+    },
+    {
+        "id": "eval_dacce_oubli",
+        "annees": "S1",
+        "categorie": "Parcours & Évaluation",
+        "sujet": "DAccE : Droit à l'oubli (Échec CEB)",
+        "statut": "Accord / Projet",
+        "actuelle": "Les données relatives à l'échec au CEB sont consultables par les équipes éducatives.",
+        "future": "L'information sur l'échec CEB est inscrite dans le DAccE et <strong>consultable uniquement durant S1</strong>. Dès le passage en S2, cette trace <strong>disparaît automatiquement</strong> pour éviter tout effet d'étiquetage durable.",
+        "source": "APD S1 – Art. 15 et Art. 24",
+        "alerte": "Les équipes de S2 ne pourront plus consulter l'information sur l'échec CEB. La continuité du soutien repose sur les bilans de synthèse DAccE rédigés en S1."
+    },
+    {
+        "id": "ori_journees",
+        "annees": "S1-S2-S3",
+        "categorie": "Orientation",
+        "sujet": "Journées de découverte – 16 périodes obligatoires",
+        "statut": "Accord / Projet",
+        "actuelle": "Les sorties à visée orientante ne sont pas codifiées formellement dans la grille.",
+        "future": "Deux journées d'activités orientantes sont <strong>obligatoires</strong>, représentant <strong>16 périodes prélevées sur les 80 périodes hors cours</strong> du dispositif AEO. Elles s'organisent durant les <strong>jours de suspension des cours autorisés</strong> par l'Art. 1.9.3-1, 1° du Code.",
+        "source": "APD S1 – Art. 1, 3° et Art. 35",
+        "alerte": "La planification de ces deux journées doit figurer dans l'agenda scolaire dès la rentrée. Elles ne peuvent se tenir sur des jours de cours ordinaires."
+    },
+    {
+        "id": "ori_carnet",
+        "annees": "S1-S2-S3",
+        "categorie": "Orientation",
+        "sujet": "Carnet d'orientation",
+        "statut": "Accord / Projet",
+        "actuelle": "L'utilisation d'un carnet d'orientation est optionnelle et non structurée selon les établissements.",
+        "future": "Un <strong>carnet d'orientation est remis gratuitement à chaque élève</strong> dès le début de S1. Il suit l'élève tout au long du Degré Inférieur, même en cas de changement d'établissement. Le carnet <strong>n'a aucun impact sur la cotation</strong>.",
+        "source": "APD S1 – Art. 34",
+        "alerte": "Chaque école élabore son canevas sur la base d'un modèle gouvernemental. La cohérence entre établissements doit être assurée."
+    },
+    {
+        "id": "gh_derogation_sport",
+        "annees": "S1-S2-S3",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Dérogation : Sportifs et Espoirs de haut niveau",
+        "statut": "Accord / Projet",
+        "actuelle": "Des mécanismes généraux existent pour les sportifs de haut niveau, sans aménagement spécifique de la grille DI.",
+        "future": "Pour les élèves reconnus sportifs de haut niveau, espoirs sportifs ou arbitres nationaux : possibilité de <strong>remplacer le cours d'EPS ainsi que 2 périodes au choix</strong> par un nombre équivalent de périodes d'entraînement sportif.",
+        "source": "APD S1 – Art. 1, 6° (Ajout §4)",
+        "alerte": "Cette dérogation nécessite l'accord explicite du directeur et doit être consignée formellement dans le dossier scolaire."
+    },
+    {
+        "id": "gh_derogation_arts",
+        "annees": "S1-S2-S3",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Dérogation : Académies et Écoles supérieures des Arts",
+        "statut": "Accord / Projet",
+        "actuelle": "Aucune dérogation de ce type n'est prévue de manière explicite dans le Degré Inférieur actuel.",
+        "future": "Pour les élèves inscrits dans une école supérieure des arts (Art. 107) : possibilité de <strong>remplacer le cours d'ECA ainsi que 2 périodes au choix</strong> par un nombre équivalent de périodes d'enseignement musical.",
+        "source": "APD S1 – Art. 1, 7° (Ajout §5)",
+        "alerte": "L'accord du directeur est requis et la décision doit figurer dans le dossier scolaire."
+    },
+    {
+        "id": "str_1diff",
+        "annees": "S1",
+        "categorie": "Structures & Inscriptions",
+        "sujet": "Suppression de la 1re Différenciée",
+        "statut": "Accord / Projet",
+        "actuelle": "La 1re année différenciée constitue une filière distincte pour les élèves sans CEB.",
+        "future": "La 1re année différenciée <strong>disparaît totalement dès la rentrée 2026-2027</strong>. Tous les élèves entrent dans la <strong>1re année du Tronc Commun</strong>. La 2e année différenciée subsiste de manière <strong>transitoire uniquement pour 2026-2027</strong>.",
+        "source": "APD S1 – Art. 36 et suivants",
+        "alerte": "Les moyens de l'ex-1re différenciée sont redistribus sous forme de périodes d'Accompagnement Renforcé (AR)."
+    },
+    {
+        "id": "str_maintien_prim",
+        "annees": "S1",
+        "categorie": "Structures & Inscriptions",
+        "sujet": "Élèves maintenus en primaire : gestion des inscriptions S1",
+        "statut": "Accord / Projet",
+        "actuelle": "Les demandes d'inscription en S1 des élèves maintenus restent actives dans les listes d'attente (CoGI), générant une gestion complexe.",
+        "future": "Sauf demande contraire des parents, les <strong>demandes d'inscription S1 seront automatiquement supprimées</strong> dès que le refus du CEB est définitif. Les <strong>listes FUI seront purgées automatiquement</strong> fin juin.",
+        "source": "APD S1 – Art. 30 (Art. 1.7.7-29, §2)",
+        "alerte": "Les directions doivent informer les parents de cette règle lors des inscriptions pour éviter toute confusion."
+    },
+    {
+        "id": "gh_p45_p90",
+        "annees": "S1-S2-S3",
+        "categorie": "Grilles & Horaires",
+        "sujet": "Flexibilité de la grille et P45/P90 (Art. 2.2.2-2)",
+        "statut": "Accord / Projet",
+        "actuelle": "L'horaire par défaut est de 32 périodes de 50 minutes (P50).",
+        "future": "Afin d'intégrer l'Accompagnement Personnalisé (AP), le PO peut, <strong>après avis favorable de l'organe de concertation sociale</strong> (CoCoBa), s'écarter des 32x50 min pour choisir l'une des 3 grilles alternatives suivantes :<br><br><strong>1° Le P45/P90 :</strong> Grille de <strong>34 périodes de 45 minutes</strong> (regroupées si possible par 90 min). Le temps dégagé finance structurellement 2 périodes d'AP.<br><strong>2° Demi-journées d'apprentissage concentré :</strong> Grille de 32 périodes (50 min) + organisation de <strong>18 demi-journées</strong> d'apprentissage concentré sur l'année.<br><s style='color:#a0aec0'><strong>3° Semaines d'apprentissage concentré :</strong> Grille de 30 périodes (50 min) + organisation de <strong>4 semaines complètes</strong> d'apprentissage concentré sur l'année.</s> <em style='font-size:0.85em;color:#a0aec0'>(Option non retenue / non applicable)</em>",
+        "source": "Code de l'Enseignement - Article 2.2.2-2, §1er",
+        "alerte": "La mise en place de ces grilles alternatives est conditionnée à un travail collectif de l'équipe pédagogique et à l'accord explicite des partenaires sociaux locaux. À défaut d'accord, la grille par défaut s'applique."
+    }
+];
+
+// ================= CONFIG & STATE =================
+const CCM = { 'Grilles & Horaires':'b', 'Accompagnement (AP/AR)':'g', 'Parcours & Évaluation':'a', 'Orientation':'v', 'Structures & Inscriptions':'r' };
+const CIM = { 'Grilles & Horaires':'🕒', 'Accompagnement (AP/AR)':'🤝', 'Parcours & Évaluation':'📈', 'Orientation':'🧭', 'Structures & Inscriptions':'🏛️' };
+const SM = { 'Accord / Projet': 'pr', 'En projet': 'pr', 'En vigueur': 'vg', 'En transition': 'tr' };
+const CVARMAP = { 'b':'--blue', 'g':'--green', 'a':'--amber', 'v':'--violet', 'r':'--red' };
+
+let yF='Toutes', cF='Toutes', sF='Tous', vm='grid';
+let idx;
+
+// ================= LUNR INIT =================
+function initLunr() {
+    idx = lunr(function () {
+        if(lunr.fr) this.use(lunr.fr);
+        
+        this.pipeline.remove(lunr.stemmer);
+        this.tokenizer.separator = /[\s\-\.]+/;
+        
+        this.ref('id');
+        this.field('sujet', {boost:10});
+        this.field('future', {boost:5});
+        this.field('actuelle', {boost:2});
+        this.field('alerte', {boost:3});
+        this.field('categorie');
+        
+        DB.forEach(function (doc) {
+            this.add({
+                id: doc.id, 
+                sujet: doc.sujet, 
+                future: doc.future.replace(/<[^>]+>/g, ' '), 
+                actuelle: doc.actuelle, 
+                alerte: doc.alerte, 
+                categorie: doc.categorie
+            });
+        }, this);
+    });
+}
+
+// ================= LOGIC =================
+function getFiltered() {
+    const s = document.getElementById('searchInput').value.toLowerCase().trim();
+    return DB.filter(i => 
+        (yF==='Toutes'||i.annees.includes(yF)) &&
+        (cF==='Toutes'||i.categorie===cF) &&
+        (sF==='Tous'||i.statut===sF) &&
+        (!s || i.sujet.toLowerCase().includes(s) || i.future.toLowerCase().includes(s) || i.actuelle.toLowerCase().includes(s) || i.alerte.toLowerCase().includes(s))
+    );
+}
+
+function renderCards() {
+    const s = document.getElementById('searchInput').value.trim();
+    document.getElementById('clearBtn').classList.toggle('visible', s.length>0);
+    
+    const f = getFiltered();
+    document.getElementById('resultsCount').innerHTML = `Affichage de <strong>${f.length}</strong> fiche${f.length>1?'s':''} sur <strong>${DB.length}</strong>`;
+    
+    const g = document.getElementById('cardGrid');
+    if(!f.length) {
+        g.innerHTML = `<div class="nr"><div class="nri">📭</div><div class="nrt">Aucune fiche trouvée</div><div class="nrs">Essayez de modifier vos filtres ou votre recherche.</div></div>`;
+        return;
+    }
+
+    g.innerHTML = f.map(i => {
+        const c = CCM[i.categorie] || 'b'; 
+        const sc = SM[i.statut] || 'vg';
+        const ft = i.future.replace(/<[^>]+>/g, ' ').substring(0,130) + '...';
+        
+        return `
+        <div class="reg-card" onclick="openModal('${i.id}')">
+            <div class="cb ${c}"></div>
+            <div class="cbody">
+                <div class="cmeta">
+                    <span class="ct ${c}">${CIM[i.categorie]} ${i.categorie}</span>
+                    <div class="cbadges"><span class="yt">${i.annees}</span><span class="st ${sc}">${i.statut}</span></div>
+                </div>
+                <div class="ctitle">${i.sujet}</div>
+                <div class="csect">
+                    <div class="csecth"><span class="sdot ${c}"></span><span class="slabel">Évolution 2026</span></div>
+                    <p>${ft}</p>
+                </div>
+                <div class="cfoot">
+                    <div class="impbox"><strong>⚠️ Impact :</strong> ${i.alerte}</div>
+                    <div class="srcline">📚 ${i.source}</div>
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function updateStats() {
+    const t = DB.length, 
+          vg = DB.filter(i=>i.statut==='En vigueur').length,
+          pr = DB.filter(i=>i.statut.includes('Projet')||i.statut==='En projet'||i.statut==='Accord / Projet').length,
+          cats = [...new Set(DB.map(i=>i.categorie))].length;
+          
+    document.getElementById('statsBar').innerHTML = `
+        <div class="sc"><div class="si blue">📄</div><div><div class="sv">${t}</div><div class="sl">Fiches réglementaires</div></div></div>
+        <div class="sc"><div class="si green">✅</div><div><div class="sv">${vg}</div><div class="sl">Textes en vigueur</div></div></div>
+        <div class="sc"><div class="si amber">⏳</div><div><div class="sv">${pr}</div><div class="sl">En cours / Projet</div></div></div>
+        <div class="sc"><div class="si violet">📂</div><div><div class="sv">${cats}</div><div class="sl">Catégories thématiques</div></div></div>
+    `;
+}
+
+function initFilters() {
+    const ys = ['Toutes','S1','S2','S3'];
+    const cs = ['Toutes', ...Object.keys(CCM)];
+    const ss = ['Tous','En vigueur','En projet','Accord / Projet','En transition'];
+
+    document.getElementById('yearFilters').innerHTML = ys.map(y => 
+        `<button class="chip ${y===yF?'active':''}" onclick="yF='${y}';initFilters();renderCards()">${y}</button>`
+    ).join('');
+    
+    document.getElementById('catFilters').innerHTML = cs.map(c => {
+        let activeClass = '';
+        if (c === cF) {
+            activeClass = 'active'; 
+        }
+        
+        const safeC = c.replace(/'/g, "\\'"); 
+        const btnText = c !== 'Toutes' ? `<span style="font-family: sans-serif;">${CIM[c]}</span><span>${c}</span>` : c;
+
+        return `<button class="chip ${activeClass}" onclick="cF='${safeC}';initFilters();renderCards()">${btnText}</button>`;
+    }).join('');
+    
+    document.getElementById('statusFilters').innerHTML = ss.map(s => 
+        `<button class="chip ${s===sF?'active':''}" onclick="sF='${s}';initFilters();renderCards()">${s}</button>`
+    ).join('');
+}
+
+function clearSearch() { document.getElementById('searchInput').value=''; document.getElementById('clearBtn').classList.remove('visible'); renderCards(); }
+function setView(v) { vm=v; document.getElementById('cardGrid').classList.toggle('lv', v==='list'); document.getElementById('gridBtn').classList.toggle('active', v==='grid'); document.getElementById('listBtn').classList.toggle('active', v==='list'); }
+
+// ================= MODAL FICHES =================
+function openModal(id) {
+    const item = DB.find(x=>x.id===id); if(!item) return;
+    const c = CCM[item.categorie] || 'b'; const sc = SM[item.statut] || 'vg';
+    
+    document.getElementById('mmeta').innerHTML = `<span class="ct ${c}">${CIM[item.categorie]} ${item.categorie}</span><span class="yt">${item.annees}</span><span class="st ${sc}">${item.statut}</span>`;
+    document.getElementById('mtitle').textContent = item.sujet;
+    document.getElementById('mc').innerHTML = `
+        <div class="mst"><div class="msth">📌 Situation actuelle</div><p>${item.actuelle}</p></div>
+        <div class="mst"><div class="msth">🔄 Évolution – Rentrée 2026</div><div>${item.future}</div></div>
+        <div class="mst"><div class="msth">⚠️ Impact Direction</div><div class="malert">${item.alerte}</div></div>
+        <div class="mst"><div class="msth">📚 Référence / source</div><div class="msrc">${item.source}</div></div>
+    `;
+    
+    document.getElementById('mo').classList.add('open'); document.body.style.overflow='hidden';
+}
+
+// ================= MODAL INFOS TECHNIQUES =================
+function openInfoModal() {
+    document.getElementById('mmeta').innerHTML = `<span class="ct b" style="background:var(--ink-light);color:white;">⚙️ Technique</span><span class="st pr" style="background:var(--ink);">Informations pratiques</span>`;
+    document.getElementById('mtitle').textContent = "À propos de cet outil";
+    
+    document.getElementById('mc').innerHTML = `
+        <div class="mst">
+            <div class="msth">⚠️ Avertissement légal</div>
+            <div class="malert">Les informations fournies dans cet outil sont sujettes à modification, les décrets, circulaires à venir seront les bases de références.</div>
+        </div>
+        <div class="mst">
+            <div class="msth">🤖 Agent de recherche intelligent</div>
+            <p style="margin-bottom: 10px;">Un outil conversationnel est accessible en bas de la page.</p>
+            <p><strong>Il effectue des recherches sémantiques exclusivement dans le corpus des fiches réglementaires présentes sur cette page.</strong> Il n'invente pas de réponse et se base uniquement sur les textes officiels encodés.</p>
+        </div>
+        <div class="mst">
+            <div class="msth">🌐 Confidentialité et réseau</div>
+            <p style="margin-bottom: 10px;">Un accès à internet est nécessaire pour charger le logo de WBE ainsi que le moteur de recherche embarqué (Lunr.js).</p>
+            <p><strong>Aucune information personnelle ni historique de recherche n'est envoyée vers un serveur extérieur.</strong> L'outil de recherche fonctionne de manière entièrement autonome, localement, sur votre navigateur.</p>
+        </div>
+    `;
+    
+    document.getElementById('mo').classList.add('open'); 
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+    if(e && e.target !== document.getElementById('mo')) return;
+    document.getElementById('mo').classList.remove('open'); document.body.style.overflow='';
+}
+
+document.getElementById('mb').addEventListener('click', e => e.stopPropagation());
+document.addEventListener('keydown', e => { if(e.key==='Escape') { document.getElementById('mo').classList.remove('open'); document.body.style.overflow=''; } });
+
+// ================= CHAT =================
+function addMsg(type, content) {
+    const el = document.createElement('div');
+    el.className = `msg msg-${type}`; el.innerHTML = content;
+    const c = document.getElementById('chatMessages');
+    c.appendChild(el); c.scrollTop = c.scrollHeight;
+    return el;
+}
+
+function showTyping() {
+    const el = document.createElement('div'); el.className = 'msg msg-bot msg-typing'; el.id='ti';
+    el.innerHTML = '<div class="tdot"></div><div class="tdot"></div><div class="tdot"></div>';
+    document.getElementById('chatMessages').appendChild(el);
+    document.getElementById('chatMessages').scrollTop = 99999;
+}
+
+function handleChat() {
+    const inp = document.getElementById('chatInput'); const q = inp.value.trim(); if(!q) return;
+    inp.value = ''; addMsg('user', q); showTyping();
+    
+    setTimeout(() => {
+        const ti = document.getElementById('ti'); if(ti) ti.remove();
+        runSearch(q);
+    }, 650);
+}
+
+function runSearch(qr) {
+    const sw = ['le','la','les','un','une','des','du','de','pour','avec','sans','dans','sur','qui','que','quoi','quel','quelle','comment','combien','est','sont','ont','fait','et','ou','au','aux','ce','ces','en','par','il','me','se','si'];
+    
+    const terms = qr.replace(/[.,!?'"()]/g, ' ').toLowerCase().split(/\s+/)
+                    .filter(w => w.length > 1)
+                    .filter(w => !sw.includes(w));
+    
+    const isSpecialTerm = terms.length === 1 && (terms[0].includes('p45') || terms[0].includes('p90'));
+
+    const q = terms.map(t => {
+        if (t.length <= 3 || /\d/.test(t)) return `${t}^10 ${t}*^5`; 
+        return `${t}^10 ${t}*^5 ${t}~1`;
+    }).join(' ');
+
+    try {
+        const res = idx.search(q);
+        const threshold = isSpecialTerm ? 0.01 : 0.1;
+        const good = res.filter(r => r.score > threshold).slice(0, 3).map(r => DB.find(x => x.id === r.ref)).filter(Boolean);
+        
+        if(good.length > 0) {
+            addMsg('bot', `J'ai identifié <strong>${good.length} fiche${good.length>1?'s':''}</strong> pour votre question. Cliquez sur une fiche à droite pour l'ouvrir en plein écran.`);
+            const det = document.getElementById('chatDetails');
+            det.innerHTML = good.map(i => {
+                const cv = CVARMAP[CCM[i.categorie]||'b'] || '--blue';
+                return `
+                <div class="dc" style="border-left-color:var(${cv})" onclick="openModal('${i.id}')">
+                    <div class="dcat">${CIM[i.categorie]} ${i.categorie} — ${i.annees}</div>
+                    <h3>${i.sujet}</h3>
+                    <div class="dbody">${i.future.replace(/<[^>]+>/g, ' ').substring(0,120)}...</div>
+                    <p class="dal"><strong>⚠️ Impact Direction :</strong> ${i.alerte}</p>
+                </div>`;
+            }).join('');
+            det.scrollTop = 0;
+        } else {
+            const fallbackSearch = DB.filter(i => 
+                i.sujet.toLowerCase().includes(qr.toLowerCase()) || 
+                i.future.toLowerCase().includes(qr.toLowerCase())
+            );
+
+            if (fallbackSearch.length > 0) {
+                addMsg('bot', `J'ai trouvé <strong>${fallbackSearch.length} fiche(s)</strong>. Cliquez sur une fiche à droite pour l'ouvrir.`);
+                const det = document.getElementById('chatDetails');
+                det.innerHTML = fallbackSearch.map(i => {
+                    const cv = CVARMAP[CCM[i.categorie]||'b'] || '--blue';
+                    return `
+                    <div class="dc" style="border-left-color:var(${cv})" onclick="openModal('${i.id}')">
+                        <div class="dcat">${CIM[i.categorie]} ${i.categorie} — ${i.annees}</div>
+                        <h3>${i.sujet}</h3>
+                        <div class="dbody">${i.future.replace(/<[^>]+>/g, ' ').substring(0,120)}...</div>
+                        <p class="dal"><strong>⚠️ Impact Direction :</strong> ${i.alerte}</p>
+                    </div>`;
+                }).join('');
+                det.scrollTop = 0;
+            } else {
+                addMsg('bot', `Aucune fiche précise trouvée pour <em>"${qr}"</em>. Essayez des mots simples (<strong>AP, AR, grille, p45, numérique...</strong>)`);
+                document.getElementById('chatDetails').innerHTML = `<div class="es"><div class="ei">📭</div><div class="et">Aucune fiche à afficher pour cette recherche.</div></div>`;
+            }
+        }
+    } catch(e) {
+        addMsg('bot', `Veuillez utiliser des mots simples, sans caractères spéciaux complexes.`);
+    }
+}
+
+window.quickQ = function(q) { 
+    document.getElementById('chatInput').value = q; 
+    handleChat(); 
+};
+
+// ================= INIT =================
+window.addEventListener('scroll', () => { document.getElementById('stbtn').classList.toggle('v', window.scrollY>400); });
+document.getElementById('searchInput').addEventListener('input', renderCards);
+
+const SUGG = [
+    {l:'⚽ Sportifs',q:'Quels sont les aménagements pour les sportifs ?'},
+    {l:'💻 Numérique',q:'Combien de périodes de numérique en S1 ?'},
+    {l:'📁 DAccE',q:'Comment fonctionne le DAccE ?'},
+    {l:'🤝 AR / AP',q:'Quelle est la différence entre l\'AR et l\'AP ?'},
+    {l:'🕒 Grille S3',q:'Quelle est la grille horaire en S3 ?'},
+    {l:'🧭 Orientation',q:'Qu\'est-ce que l\'AEO et le carnet d\'orientation ?'}
+];
+
+window.onload = () => {
+    initLunr(); updateStats(); initFilters(); renderCards();
+    
+    document.getElementById('suggestChips').innerHTML = SUGG.map(s => {
+        const safeQuery = s.q.replace(/'/g, "\\'"); 
+        return `<button class="schip" onclick="window.quickQ('${safeQuery}')">${s.l}</button>`;
+    }).join('');
+    
+    addMsg('bot', `Bonjour&nbsp;! Je suis votre assistant réglementaire. Posez-moi une question sur la réforme du Tronc Commun S1&ndash;S3 (grille, P45, AP, AR, DAccE…) ou utilisez les suggestions ci-dessous.`);
+};
+</script>
+</body>
+</html>

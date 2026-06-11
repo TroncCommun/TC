@@ -7,9 +7,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "Le volume total de 32 périodes • 50 min • grilles",
     "future": "<table class='grid-table'><thead><tr><th>Discipline</th><th>S1</th><th>S2</th><th>S3</th></tr></thead><tbody><tr style='background:#fffbeb'><td>EPC</td><td>1</td><td>1</td><td>1</td></tr><tr style='background:#fffbeb'><td>Religion / Morale</td><td>1</td><td>1</td><td>1</td></tr><tr style='background:#fffbeb'><td>Français</td><td>6</td><td>4</td><td>4</td></tr><tr style='background:#fffbeb'><td>Langues anciennes</td><td>-</td><td>2</td><td>1</td></tr><tr style='background:#fffbeb'><td>Langue moderne I*</td><td>4</td><td>4</td><td>4</td></tr><tr style='background:#fffbeb'><td>Mathématiques</td><td>5</td><td>5</td><td>4</td></tr><tr style='background:#fffbeb'><td>Sciences</td><td>3</td><td>3</td><td>3</td></tr><tr style='background:#fef3c7'><td><strong>FMTTN (Total)</strong></td><td>3</td><td>3</td><td>0</td></tr><tr class='sub-row'><td>↳ FMTT</td><td>1</td><td>1</td><td>0</td></tr><tr class='sub-row'><td>↳ Numérique</td><td>2</td><td>2</td><td>0</td></tr><tr style='background:#fffbeb'><td>FHGES</td><td>4</td><td>4</td><td>4</td></tr><tr style='background:#fffbeb'><td>Éd. culturelle et artistique</td><td>2</td><td>2</td><td>0</td></tr><tr style='background:#fffbeb'><td>Éd. physique et santé</td><td>3</td><td>3</td><td>2</td></tr><tr style='background:#fef3c7'><td>Module d'orientation</td><td>-</td><td>-</td><td>8</td></tr></tbody><tfoot><tr><td>Total disciplinaire</td><td>32</td><td>32</td><td>32</td></tr></tfoot></table><div class='grid-note'><strong>*LM2 :</strong> Retirée de la grille obligatoire. Subsiste comme module optionnel en S3.<br><strong>S1 :</strong> Le cours de langues anciennes est compris dans le cours de Français.<br><strong>S3 :</strong> Organisation de 8 périodes obligatoires de module d'orientation &amp; disparition du bloc FMTTN.</div>",
-    "source": "APD S1 – Art. 1, 1° / Référentiels disciplinaires FWB",
+    "source": "Projet de circulaire S1 05-06-2026 ChII pt 2.1 / Référentiels disciplinaires FWB",
     "alerte": "Nouvelle organisation des cours - respect des consignes de WBE.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -21,10 +21,10 @@ const DB_DEFAULT = [
     "intro": "32 périodes • 50 min • P45/P90 • AP intégré • orientation • tableau disciplinaire",
     "actuelle": "",
     "future": "<p><strong>A) Périodes = 50 minutes</strong>La grille standard comprend <strong>32 périodes hebdomadaires de 50 minutes</strong>. Elle constitue la grille de référence pour la S1.</p><p><strong>B) Périodes = 45/90 minutes</strong>La grille horaire est identique mais compte <strong>34 périodes de 45 minutes</strong> (regroupées autant que possible en plages de 90 minutes). Il s'agit en pratique de 32 périodes de 45 min + 2 périodes supplémentaires consacrées à l'AP. Les écoles peuvent aussi intégrer les 2 périodes d'AP dans les 32 périodes et créer 2 périodes hors grille pour de la remédiation. Cette organisation nécessite un avis du COCOBA et du COPA.</p><p><strong>C) Activités consacrées à l'orientation</strong>14 périodes sont réservées à deux journées de découverte (orientation). Ces journées ne prennent pas forcément la forme d'un stage. Objectifs : tester des domaines variés, apprendre à se connaître, identifier les centres d'intérêt. 16 autres périodes sont consacrées à des activités transversales d'orientation au sein des cours.</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire de la S1",
+    "source": "Projet de circulaire S1 05-06-2026 Ch V",
     "alerte": "Le choix entre P50, P45/P90 ou demi-journées concentrées nécessite un avis préalable du COCOBA. Le plafond de 12 jours de suspension reste d'application.",
     "visible": true,
-    "date_maj": "02/04/2026"
+    "date_maj": "11/06/2026"
   },
   {
     "id": "lm1_choix",
@@ -34,9 +34,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "LM1 • changement de langue • accord directeur • immunisation spécialisé • néerlandais Bruxelles",
     "future": "<ul><li><strong>Liberté de choix à l'inscription :</strong> Les parents peuvent choisir un cours de langue moderne différent de celui suivi dans l'enseignement primaire, moyennant l'<strong>avis favorable du directeur</strong>.</li><li><strong>Le néerlandais est obligatoire à Bruxelles.</strong> Pas de possibilité d'organiser un cours de LM1 en anglais ou en allemand.</li><li><strong>Mesure de protection pour les élèves issus de l'enseignement spécialisé :</strong> une <strong>immunisation de deux ans</strong> est prévue. En S1 et S2, les résultats en langue moderne ne sont pris en compte que s'ils sont <em>favorables</em> à l'élève. En S3, les résultats seront intégralement comptabilisés.</li></ul>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section D",
+    "source": "Projet de circulaire S1 05-06-2026 Ch II Pt 2.1, Langues modernes et immersion & Ch  IV pt 2.2",
     "alerte": "Vérifier systématiquement la langue suivie au primaire et documenter par écrit la décision du directeur. L'immunisation ne concerne que les élèves issus du spécialisé fondamental.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -51,7 +51,7 @@ const DB_DEFAULT = [
     "source": "APD S1 & FAQ PR – §2 Grille-horaire, Sections J/K",
     "alerte": "Toute heure d'anglais/allemand en S1 qui ne passe pas par un dispositif d'immersion est contraire au cadre légal.",
     "visible": true,
-    "date_maj": "01/04/2026"
+    "date_maj": "11/06/2026"
   },
   {
     "id": "imm_double",
@@ -63,7 +63,7 @@ const DB_DEFAULT = [
     "future": "Le nombre minimal de périodes en <strong>double immersion</strong> passe d'au moins 8 à un <strong>minimum de 6 périodes par langue</strong>. Le maximum est fixé à <strong>13 périodes</strong>. L'organisation d'une double immersion <strong>n'implique pas l'ajout d'un cours de Langue moderne II</strong> dans la grille horaire.",
     "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section K",
     "alerte": "Cette évolution (de 8 à 6 périodes) ne concerne que la double immersion. L'immersion simple conserve son plancher à 8 périodes hebdomadaires.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -73,10 +73,10 @@ const DB_DEFAULT = [
     "sujet": "FHGES : Formation Historique, Géographique, Économique et Sociale",
     "statut": "Accord / Projet",
     "intro": "FHGES • 4 périodes • fusion histoire géo éco sociales • basculement automatique • IFPC",
-    "future": "<p>Ce cours regroupe l'histoire, la géographie, l'économie et les sciences sociales à raison de <strong>4 périodes hebdomadaires</strong>. Il peut être confié à un seul enseignant ou partagé entre plusieurs (ex : 2 périodes histoire/géo et 2 périodes éco/sociales).</p><p><strong>Quels enseignants ?</strong> La nouvelle fonction de <strong>CG FHGES DI</strong> provient de la fusion des fonctions CG Histoire DI, CG Géographie DI, CG Sciences sociales DI, CG Sciences économiques DI et CG Sciences humaines DI. Un <strong>basculement automatique</strong> est prévu pour les enseignants nommés/définitifs ou temporaires prioritaires dans ces fonctions. Un PV de basculement est requis. Des formations sont mises en place par l'<strong>IFPC</strong> (sessions en avril, mai et juin).</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section E",
-    "alerte": "En cas de bloc intégré, une concertation pédagogique renforcée est indispensable. Le basculement doit être attesté par un PV de basculement joint au formulaire DOC12.",
-    "date_maj": "01/04/2026",
+    "future": "<p>Ce cours regroupe l'histoire, la géographie, l'économie et les sciences sociales à raison de <strong>4 périodes hebdomadaires</strong>. </p><p><strong>Quels enseignants ?</strong> La nouvelle fonction de <strong>CG FHGES DI</strong> provient de la fusion des fonctions CG Histoire DI, CG Géographie DI, CG Sciences sociales DI, CG Sciences économiques DI et CG Sciences humaines DI. Un <strong>basculement automatique</strong> est prévu pour les enseignants nommés/définitifs ou temporaires prioritaires dans ces fonctions. Un PV de basculement est requis (Voir la circulaire basculement de l'AGE). Des formations sont mises en place par l'<strong>IFPC</strong> (sessions en avril, mai et juin).</p>",
+    "source": "Projet de circulaire S1 05-06-2026 Ch II Pt 2.1 & Formation Ch VIII & Basculement Partie 2, Ch II",
+    "alerte": "Le basculement doit être attesté par un PV de basculement joint au formulaire DOC12.",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -85,11 +85,11 @@ const DB_DEFAULT = [
     "categorie": "Grilles & Horaires",
     "sujet": "ECA : Éducation culturelle et artistique",
     "statut": "Accord / Projet",
-    "intro": "ECA • 2 périodes • expression française corporelle plastique musicale • un ou plusieurs enseignants",
-    "future": "Prévu à raison de <strong>2 périodes par semaine</strong>, ce cours aborde l'expression française et corporelle, plastique et musicale. Il peut être dispensé par <strong>un ou plusieurs enseignants</strong>. La formation d'ECA regroupe 3 modes d'expression artistique : expression française et corporelle, expression plastique et expression musicale.",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section G",
-    "alerte": "La coordination entre enseignants est essentielle pour garantir que les 3 modes d'expression sont couverts chaque année. Les accroches cours-fonction seront publiées dès l'adoption de l'arrêté du Gouvernement.",
-    "date_maj": "01/04/2026",
+    "intro": "ECA • 2 périodes • expression française corporelle plastique musicale • ",
+    "future": "Prévu à raison de <strong>2 périodes par semaine</strong>, ce cours aborde l'expression française et corporelle, plastique et musicale. </strong>. La formation d'ECA regroupe 3 modes d'expression artistique : expression française et corporelle, expression plastique et expression musicale.",
+    "source": "Projet de circulaire S1 05-06-2026 Ch II Pt 2.1 Basculement Partie 2, Ch VI",
+    "alerte": "Les 3 modes d'expression sont couverts chaque année. 3 fonctions.",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -98,11 +98,11 @@ const DB_DEFAULT = [
     "categorie": "Grilles & Horaires",
     "sujet": "FMTT : Formation manuelle, technique et technologique",
     "statut": "Accord / Projet",
-    "intro": "FMTT • 1 période • scission FMTTN • 4 champs • basculement CT Éducation technologique • IFPC 2027",
+    "intro": "FMTT • 1 période • 4 champs • basculement CT Éducation technologique • IFPC 2027",
     "future": "<p>La FMTTN est officiellement scindée : <strong>1 période de FMTT</strong> + 2 périodes de Numérique. La FMTT aborde <strong>4 champs</strong> : alimentation/habitat, techniques de culture, matières/matériaux, et objets technologiques.</p><p><strong>Attribution de la fonction CT FMTT DI – 3 étapes :</strong><br>1° <strong>Basculement automatique</strong> des professeurs de CT Éducation technologique DI (nommés/définitifs ou temporaires prioritaires au 23 août 2026).<br>2° <strong>Appel à candidatures</strong> (mesure transitoire 2026-2029) : ouvert aux CT et PP du DI possédant le CESS, candidature avant le 23 août 2026 au plus tard.<br>3° <strong>Primo-recrutement</strong> sur base de la nouvelle fiche-titre si le poste reste vacant.</p><p>Une <strong>formation IFPC obligatoire</strong> est prévue (à partir de janvier 2027). Sans formation suivie avant la rentrée 2029-2030, l'enseignant perd l'ancienneté acquise dans la fonction.</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section F",
-    "alerte": "Le PO doit lancer l'appel à candidatures et réaliser le classement avant le 23 août 2026. Ce classement restera valable pour les années 2026-2027, 2027-2028 et 2028-2029.",
-    "date_maj": "01/04/2026",
+    "source": "Projet de circulaire S1 05-06-2026 Ch II Pt 2.1 & Formation Ch VIII & Basculement Partie 2, Ch III",
+    "alerte": "Le PO doit lancer l'appel à candidatures et réaliser le classement avant le 23 août 2026 (!Vérifier la date de clôture de l'appel décidée par le PO!). Ce classement restera valable pour les années 2026-2027, 2027-2028 et 2028-2029.",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -112,10 +112,10 @@ const DB_DEFAULT = [
     "sujet": "Formation au numérique : 2 périodes hebdomadaires",
     "statut": "Accord / Projet",
     "intro": "numérique • 2 périodes • DigComp 3.0 • IA • cybersécurité • CT Numérique DI • certificat 12 ECTS",
-    "future": "<p>Le volet numérique est détaché en un cours spécifique de <strong>2 périodes hebdomadaires</strong>. Le référentiel actuel sera aligné sur <strong>DigComp 3.0</strong> : IA explicite/implicite, cybersécurité, droits et responsabilités numériques, bien-être numérique, lutte contre la désinformation.</p><p><strong>Attribution de la fonction CT Numérique DI :</strong><br>1° <strong>Basculement automatique</strong> des enseignants de CT Informatique DI (nommés/définitifs ou temporaires prioritaires au 23 août 2026).<br>2° <strong>Appel à candidatures</strong> : ouvert aux CT/PP DI possédant le CESS, candidature avant le 23 août 2026.<br>3° <strong>Primo-recrutement</strong> sur base de la nouvelle fiche-titre si le poste reste vacant.</p><p>Pour conserver l'ancienneté acquise, l'enseignant doit obtenir le <strong>certificat en Formation Numérique (12 ECTS)</strong> avant la rentrée 2029-2030.</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section F (Numérique)",
+    "future": "<p>Le volet numérique est détaché en un cours spécifique de <strong>2 périodes hebdomadaires</strong>. Le référentiel actuel sera aligné sur <strong>DigComp 3.0</strong> : IA explicite/implicite, cybersécurité, droits et responsabilités numériques, bien-être numérique, lutte contre la désinformation.</p><p><strong>Attribution de la fonction CT Numérique DI :</strong><br>1° <strong>Basculement automatique</strong> des enseignants de CT Informatique DI (nommés/définitifs ou temporaires prioritaires au 23 août 2026).<br>2° <strong>Appel à candidatures</strong> : ouvert aux CT/PP DI possédant le CESS et après aux CG math DI, candidature avant le 23 août 2026.<br>3° <strong>Primo-recrutement</strong> sur base de la nouvelle fiche-titre si le poste reste vacant.</p><p>Pour conserver l'ancienneté acquise, l'enseignant doit obtenir le <strong>certificat en Formation Numérique (12 ECTS)</strong> avant la rentrée 2029-2030.</p>",
+    "source": "AProjet de circulaire S1 05-06-2026 Ch II Pt 2.1 & Formation Ch VIII & Basculement Partie 2, Ch IV",
     "alerte": "Les directions doivent identifier les membres du personnel concernés et planifier leur accès au certificat 12 ECTS.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -126,9 +126,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "sportifs haut niveau • espoirs • arbitres • jeunes talents • partenaires entraînement • EPS + 2 périodes",
     "future": "Les élèves reconnus comme <strong>sportifs de haut niveau, arbitres de haut niveau, arbitres nationaux, espoirs sportifs, jeunes talents, sportifs en reconversion ou partenaires d'entraînement</strong> peuvent, à la demande des parents (ou de l'élève majeur) et avec l'<strong>autorisation du directeur</strong>, remplacer les périodes du cours d'EPS ainsi que <strong>2 périodes de cours au choix</strong> par un nombre équivalent de périodes d'entraînement sportif.",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section H",
+    "source": "Projet de circulaire S1 05-06-2026 Ch II pt 2.1",
     "alerte": "Cette dérogation nécessite l'accord explicite du directeur et doit être consignée formellement dans le dossier scolaire.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -139,9 +139,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "école supérieure des arts • ECA + 2 périodes • enseignement musical • accord directeur",
     "future": "Les élèves inscrits dans une <strong>école supérieure des arts</strong> peuvent, à la demande des parents (ou de l'élève majeur) et avec l'<strong>autorisation du directeur</strong>, remplacer les périodes du cours d'ECA (expression française et corporelle, musicale et plastique) ainsi que <strong>2 périodes de cours au choix</strong> par un nombre équivalent de périodes d'enseignement musical.",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section I",
+    "source": "Projet de circulaire S1 05-06-2026 Ch II pt 2.1",
     "alerte": "L'accord du directeur est requis et la décision doit figurer dans le dossier scolaire.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -151,10 +151,10 @@ const DB_DEFAULT = [
     "sujet": "Flexibilité de la grille : P45/P90",
     "statut": "Accord / Projet",
     "intro": "P45/P90 • 34 périodes • COCOBA • COPA • AP intégré • remédiation hors grille",
-    "future": "La grille P45/P90 est identique à la grille standard mais compte <strong>34 périodes de 45 minutes</strong>, regroupées autant que possible en plages de 90 minutes. Il s'agit en pratique de 32 périodes de 45 min + <strong>2 périodes supplémentaires consacrées à l'AP</strong>. Les écoles peuvent aussi intégrer les 2 périodes d'AP dans les 32 périodes et dégager 2 périodes hors grille pour de la remédiation ou d'autres dispositifs. Cette organisation nécessite un <strong>avis du COCOBA et du COPA</strong>.",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section B",
+    "future": "La grille P45/P90 est identique à la grille standard mais compte <strong>34 périodes de 45 minutes</strong>, regroupées autant que possible en plages de 90 minutes. Il s'agit en pratique de 32 périodes de 45 min + <strong>2 périodes supplémentaires consacrées à l'AP</strong>. Les écoles peuvent aussi intégrer les 2 périodes d'AP dans les 32 périodes et dégager 2 périodes hors grille pour de la remédiation ou d'autres dispositifs de soutien. Cette organisation nécessite un <strong>avis du COCOBA et du COPA</strong>. Les AR peuvent s'ajouter à ces grilles (Max 36p.)",
+    "source": "Projet de circulaire S1 05-06-2026 Ch III pt 5.2 & pt 8",
     "alerte": "L'avis du COCOBA et du COPA est obligatoire avant de déployer le modèle P45/P90.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -165,9 +165,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "AP • 2 périodes • tous élèves • remédiation consolidation dépassement • 1 période / 19 élèves • COCOBA",
     "future": "<p>L'AP est déployé au profit de <strong>tous les élèves sans exception</strong> (remédiation, consolidation ou dépassement). <strong>2 périodes hebdomadaires</strong> sont organisées, intégrées dans les 32 périodes obligatoires (sauf en P45/P90).</p><p><strong>Balises :</strong></p><ul><li>Les périodes AP ne peuvent pas servir à réduire <em>de façon permanente et systématique</em> la taille du groupe-classe.</li><li>Interdiction de créer des groupes homogènes permanents d'élèves en difficulté.</li><li>Si des élèves sont temporairement sortis de la classe, interdiction d'avancer dans de la nouvelle matière avec le reste du groupe.</li><li>Souplesse possible (concentration intensive), mais l'équivalent de 2 périodes hebdomadaires doit rester garanti à tout moment.</li></ul><p><strong>Calcul :</strong> 1 période par tranche entamée de <strong>19 élèves</strong> inscrits au degré inférieur. Avis du COCOBA obligatoire pour l'attribution.</p>",
-    "source": "APD S1 & FAQ PR – §5 Accompagnement personnalisé",
+    "source": "Projet de circulaire S1 05-06-2026 Ch VIII pt 3.2",
     "alerte": "Une communication claire et spécifique vis-à-vis des parents doit être élaborée en début d'année scolaire. L'attribution des heures d'AP doit faire l'objet d'un avis du COCOBA.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -178,9 +178,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "AP • CG DI • CT DI • perte de charge • titre pédagogique • ancienneté • nomination possible",
     "future": "<p>L'AP est ouvert aux fonctions de <strong>professeur de cours généraux DI ou de cours techniques DI</strong> (ordinaire et spécialisé forme 4 – ex : CG Français DI, CG Maths DI, CG FHGES DI…).</p><p><strong>Ordre de priorité :</strong></p><ol><li><strong>Priorité aux professeurs en perte de charge</strong> (nommés/définitifs) suite à la réforme, s'ils détiennent un <em>titre pédagogique</em>. Obligation d'accepter si les périodes AP sont rattachées à leur fonction.</li><li>En cas d'égalité, priorité à l'ancienneté de service au sein du PO.</li><li>Attribution sur base <strong>volontaire</strong> ensuite.</li></ol><p>Ces emplois peuvent donner lieu à une <strong>nomination à titre définitif</strong>.</p>",
-    "source": "APD S1 & FAQ PR – §5 Accompagnement personnalisé, Section D",
+    "source": "Projet de circulaire S1 05-06-2026 Partie 2, Ch VII Ch VIII",
     "alerte": "Les enseignants en perte de charge n'ont pas le droit de refuser les périodes AP rattachées à leur fonction. L'attribution doit faire l'objet d'un avis du COCOBA.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -191,9 +191,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "AR • moins de 50% CEB • transversal ou hors grille • interdiction groupes homogènes • 34/36 périodes max",
     "future": "<p><strong>Élèves bénéficiaires :</strong> Élèves admis en S1 ayant obtenu <strong>moins de 50%</strong> à une ou plusieurs parties du CEB, ou (à partir de 2028-2029) moins de 60% à l'ensemble de l'épreuve.</p><p><strong>Organisation possible :</strong></p><ul><li>a) De manière <strong>transversale dans la grille</strong> (co-enseignement : 2 profs pour 1 classe ou 3 profs pour 2 classes).</li><li>b) Exclusivement <strong>au-delà de la grille horaire</strong>.</li><li>c) <strong>Dans et au-delà</strong> de la grille.</li></ul><p>En cas d'AR hors horaire, la grille ne peut pas dépasser <strong>34 périodes/semaine (P50)</strong> ou <strong>36 périodes/semaine (P45/P90)</strong>.</p><p>Interdiction formelle de créer des groupes homogènes permanents. Les groupes réduits doivent rester <strong>temporaires et flexibles</strong>. Une communication spécifique aux parents est obligatoire en début d'année.</p>",
-    "source": "APD S1 & FAQ PR – §6 Accompagnement renforcé, Sections A/B",
+    "source": "Projet de circulaire S1 05-06-2026 CH VIII pt 3.2",
     "alerte": "L'AR remplace les anciennes structures de 1re différenciée. Les élèves bénéficiaires disposent d'un DAccE dès le début de l'année scolaire.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -204,9 +204,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "AR • 10 000 périodes • 0,5 période par échec CEB • formule lissage • calcul transitoire 2026-2027",
     "future": "<p><strong>Calcul pérenne (à partir de 2028-2029) :</strong> Enveloppe fermée de <strong>10.000 périodes</strong> FWB. Chaque élève en échec à une partie du CEB génère <strong>0,5 période-professeur</strong>. La formule de lissage est : <em>N final = 0,5 × (10.000 / P_TOT)</em>.</p><p><strong>Calcul transitoire 2026-2027 :</strong></p><ul><li>Écoles avec 1D/2D en 2025-2026 : périodes calculées sur le comptage du <strong>15 janvier 2026</strong>.</li><li>Écoles sans 1D/2D : périodes calculées sur le comptage du <strong>1er octobre 2026</strong> (effet rétroactif). Un élève du spécialisé sans CEB génère 1,4 période ; un élève CEB génère 0,5 période par partie en échec.</li></ul>",
-    "source": "APD S1 & FAQ PR – §6 Accompagnement renforcé, Section C",
+    "source": "Projet de circulaire S1 05-06-2026 CH VI",
     "alerte": "Le calcul définitif est réalisé par l'Administration centrale. Ces moyens sont exclusivement réservés à la remédiation AR.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -217,9 +217,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "DAccE • 5 volets • numérique ETNIC • suivi apprentissages • accès Cerbère EDU • RGPD • 6 mois après fin scolarité",
     "future": "<p>Le DAccE est créé par la Communauté française pour chaque élève lors de sa première inscription et le suit tout au long de sa scolarité. Outil numérique développé par l'ETNIC, il est <strong>personnel et confidentiel</strong>. Il ne contient aucune donnée relative aux sanctions disciplinaires ni aux résultats d'épreuves sommatives (sauf mention des certificats obtenus).</p><p><strong>5 volets :</strong> Administratif • Parcours scolaire • Suivi de l'élève (bilan de synthèse, résultats CEB, actions pédagogiques) • Fréquentation scolaire (absentéisme/décrochage) • Procédures (maintien, recours).</p><p><strong>Accès :</strong> Via le guichet « Mon Espace » FWB, compte Cerbère EDU, affiliation validée par l'école, permission octroyée via l'application MODE. Accès en lecture/écriture selon profil (direction, équipe éducative, CPMS, pôle territorial).</p><p><strong>Bilan de synthèse :</strong> Pour les élèves en difficulté persistante, il est alimenté au plus tard le vendredi suivant les vacances d'automne, puis réévalué après Carnaval et en fin d'année.</p><p><strong>RGPD :</strong> Données conservées jusqu'à 6 mois après que l'élève a terminé avec fruit l'enseignement secondaire, puis destruction.</p>",
-    "source": "APD S1 & FAQ PR – §10 DAccE",
+    "source": "Projet de circulaire S1 05-06-2026 CH III Pt 6",
     "alerte": "La direction doit informer les parents du fonctionnement du DAccE avant la prise d'inscription. Le DAccE n'est pas encore implémenté dans l'enseignement spécialisé (suivi via PIA).",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -228,11 +228,11 @@ const DB_DEFAULT = [
     "categorie": "Parcours & Évaluation",
     "sujet": "Examens en S1 : interdiction totale",
     "statut": "Accord / Projet",
-    "intro": "examens de passage interdits • pas de session • évaluation continue • année de maintien incluse",
-    "future": "<ul><li><strong>Mesure PR :</strong> Il est formellement interdit d'organiser des examens de passage en S1 et par extension dans l'<strong>année de maintien</strong>.</li><li><strong>Mesure PO :</strong> Aucune session d'examens ne peut être organisée à un quelconque moment de l'année scolaire en S1. L'<strong>évaluation continue</strong> est la règle.</li></ul>",
+    "intro": "examens de passage interdits • pas de seconde session  • évaluation continue • année de maintien incluse",
+    "future": "<ul><li><strong>Mesure PR :</strong> Il est formellement interdit d'organiser des examens de passage en S1 et par extension dans l'<strong>année de maintien</strong>.</li><li><strong></li></ul>",
     "source": "APD S1 & FAQ PR – §9 Organisation des examens en S1",
     "alerte": "Cette mesure implique une révision profonde des pratiques évaluatives en S1. La communication aux équipes doit être faite bien en amont de la rentrée.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -243,9 +243,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "DAccE • volet suivi • résultats CEB visibles S1 uniquement • anti-étiquetage • équipe S2 sans accès",
     "future": "Le volet « suivi de l'élève » du DAccE contient une rubrique permettant d'informer l'équipe pédagogique de S1 si l'élève a obtenu <strong>une moyenne inférieure à 60% au CEB</strong> ou des résultats inférieurs à 50% à une ou plusieurs parties. Cette information est accessible <strong>uniquement en S1</strong>. L'équipe de S2 ne peut plus consulter ces données, garantissant un <strong>droit à l'oubli</strong> et évitant tout effet d'étiquetage durable.",
-    "source": "APD S1 & FAQ PR – §10 DAccE, Volet suivi",
+    "source": "Projet de circulaire S1 05-06-2026 CH III Pt 6",
     "alerte": "Les équipes de S2 ne pourront plus consulter les résultats CEB. La continuité du soutien repose sur les bilans de synthèse DAccE rédigés en S1.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -256,9 +256,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "maintien exceptionnel • 3 bilans de synthèse • DAccE procédures • direction valide • dernier mercredi",
     "future": "Pour justifier un <strong>maintien exceptionnel</strong> en fin d'année, l'équipe pédagogique doit obligatoirement s'appuyer sur <strong>trois bilans de synthèse</strong> complétés dans le DAccE au cours de l'année, prouvant que les ajustements pédagogiques n'ont pas suffi. La décision est encodée dans le DAccE, <strong>validée par la direction</strong> et communiquée au plus tard le <strong>dernier mercredi de l'année scolaire</strong> (sous peine d'être privée d'effet). Les phases de concertation interne et d'éventuels recours sont également centralisées via le volet « procédures » du DAccE.",
-    "source": "APD S1 & FAQ PR – §10 DAccE, Section F",
+    "source": "AProjet de circulaire S1 05-06-2026 CH III Pt 6",
     "alerte": "Le maintien doit rester exceptionnel et documenté. La procédure est obligatoirement menée via le DAccE.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -269,9 +269,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "AEO • 128 périodes • 48 intégrées aux cours • 80 hors cours • connaissance de soi • découverte • projet",
     "future": "<p>L'AEO s'articule autour de 3 axes : <strong>connaissance de soi</strong>, <strong>découverte du monde scolaire et professionnel</strong>, <strong>construction du projet d'orientation</strong>.</p><p>Dans le degré inférieur, <strong>128 périodes</strong> sont dédiées à l'orientation :</p><ul><li><strong>48 périodes intégrées aux cours</strong> : activités liées au dépôt de traces dans le carnet d'orientation.</li><li><strong>80 périodes hors cours</strong> : rencontres de professionnels, visites d'entreprises/musées, journées d'accueil, animations en classe…</li></ul><p>Ce dispositif ne modifie pas la grille horaire de 32 périodes de cours. L'organisation peut se faire en collaboration avec le délégué chargé de l'orientation, la direction ou un membre de l'équipe pédagogique.</p>",
-    "source": "APD S1 & FAQ PR – §11 Carnet d'orientation, Section C",
+    "source": "Projet de circulaire S1 05-06-2026 Ch III pt 6.5 & Ch V",
     "alerte": "La planification des 80 périodes hors cours (dont les deux journées de découverte) doit être anticipée dès le début d'année scolaire. L'AEO doit être inscrite dans le projet d'établissement.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -282,9 +282,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "AEO • 2 journées obligatoires • 14 périodes • jours blancs • pas forcément hors école",
     "future": "<strong>14 périodes</strong> sont réservées à l'organisation de <strong>deux journées de découverte</strong> dans le cadre des activités d'orientation. Ces deux journées :<ul><li>Peuvent être organisées pendant les <strong>jours blancs</strong> (pas d'obligation).</li><li><strong>N'impliquent pas forcément des activités extérieures</strong> à l'école et ne prennent pas forcément la forme d'un stage.</li><li>Ont pour objectifs : tester des domaines variés, apprendre à se connaître, identifier les centres d'intérêt des élèves.</li></ul>16 autres périodes sont réservées à des activités transversales d'orientation au sein des cours.",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section C",
+    "source": "Projet de circulaire S1 05-06-2026 Ch III pt 6.5 & Ch V",
     "alerte": "La planification de ces deux journées doit figurer dans l'agenda scolaire dès la rentrée. Attention : le template mentionne 14 périodes (et non 16) pour les journées de découverte.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -295,10 +295,10 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "S3 • module orientation • 8 périodes • filières • immersions • partenariats",
     "future": "En S3, <strong>8 périodes hebdomadaires</strong> sont consacrées au module d'orientation. Ce bloc remplace les cours FMTTN qui disparaissent en S3. Il est organisé autour de <strong>projets de découverte des filières</strong>, d'immersions en entreprises et d'ateliers d'orientation encadrés.",
-    "source": "APD S1 – Grille de référence S3 / Décret du 16/05/2024",
+    "source": "Projet de circulaire S1 05-06-2026 Ch III pt 6.5 & Ch V",
     "alerte": "L'organisation du module d'orientation S3 nécessite des partenariats extérieurs (entreprises, CPMS, haute école). Une planification annuelle est indispensable.",
-    "date_maj": "01/04/2026",
-    "visible": true
+    "date_maj": "11/06/2026",
+    "visible": false
   },
   {
     "id": "ori_carnet",
@@ -308,9 +308,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "carnet • gratuit • WBE • neutre • pas d'évaluation • conservation par l'élève • monorientation.be",
     "future": "<p>À partir de la S1, chaque élève dispose obligatoirement d'un <strong>carnet d'orientation remis gratuitement par l'école</strong>. WBE élabore le canevas sur base du modèle gouvernemental. Ce modèle est <strong>neutre</strong> et permet à l'élève de continuer à utiliser son carnet en cas de changement d'école.</p><p><strong>Usage :</strong> Le carnet ne peut être utilisé à des fins de sanction ou d'évaluation. Des retours réguliers vers le carnet sont planifiés. Les observations de l'équipe éducative accompagnent la construction de sens (pas d'évaluation sommative).</p><p><strong>Conservation :</strong> L'élève conserve son carnet jusqu'à la fin de sa scolarité secondaire.</p><p><strong>Outils complémentaires :</strong> Guide de l'enseignant (AEO) + plateforme <a href='http://www.monorientation.be' target='_blank'>www.monorientation.be</a>.</p>",
-    "source": "APD S1 & FAQ PR – §11 Carnet d'orientation",
+    "source": "Projet de circulaire S1 05-06-2026 Ch III pt 6.5 & Ch V",
     "alerte": "Le carnet d'orientation ne peut jamais être utilisé pour justifier un maintien exceptionnel ni faire l'objet d'une évaluation sommative.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -321,10 +321,10 @@ const DB_DEFAULT = [
     "sujet": "Suppression de la 1re différenciée – Phasage",
     "intro": "phasage • 1D supprimée 2026-2027 • 2D transitoire • tableau entrée en vigueur S1 S2 S3",
     "future": "<p>La <strong>1re année différenciée disparaît dès 2026-2027</strong>. Les moyens sont redistribués sous forme de périodes d'Accompagnement Renforcé (AR).</p><br><p><strong>2026-2027</strong> : La 2C, la 2D, les 3G-3TT-3TQ-3P-3S-DO et la S1 sont organisées. La 1C, la 2S, la 1D, la S2 et la S3 ne le sont pas.</p><p><strong>2027-2028</strong> : Seules les 3G-3TT-3TQ-3P-3S-DO et la S1 subsistent, cette dernière avec une année de maintien. La S2 ouvre également, avec une année de maintien pour accueillir les élèves de 2C orientés vers une ancienne 2S. Les autres années d'études disparaissent.</p><p><strong>2028-2029</strong> : Les 3G-3TT-3TQ-3P-3S-DO s'éteignent à leur tour. La S1 et la S2 se maintiennent, toutes deux avec une année de maintien. La S3 fait son entrée pour la première fois.</p><p><strong>2029-2030</strong> : La S3 se poursuit, désormais aussi avec une année de maintien. La S1 et la S2 restent actives, toujours avec leur année de maintien. Aucune autre année d'études n'est organisée.",
-    "source": "APD S1 & FAQ PR – §1 Phasage",
+    "source": "Projet de circulaire S1 05-06-2026 Ch I pt 1",
     "alerte": "Aucune nouvelle cohorte ne sera organisée en 1D après la rentrée 2026. Les moyens de l'ex-1D sont redistribués en AR.",
     "visible": true,
-    "date_maj": "02/04/2026"
+    "date_maj": "11/06/2026"
   },
   {
     "id": "str_2diff_transitoire",
@@ -332,11 +332,11 @@ const DB_DEFAULT = [
     "categorie": "Structures & Inscriptions",
     "sujet": "2e année différenciée : maintien transitoire 2026-2027",
     "statut": "Accord / Projet",
-    "intro": "2e différenciée • transitoire 2026-2027 seulement • disparition 2027-2028 • calcul AR",
-    "future": "La <strong>2e année différenciée est maintenue à titre transitoire en 2026-2027 uniquement</strong>, pour les élèves déjà engagés dans le dispositif. En 2027-2028, les élèves de 2D ayant échoué en tout ou partie au CEB sont comptabilisés avec les élèves de S1 dans le calcul de l'AR. À partir de 2027-2028, la 2D disparaît définitivement.",
-    "source": "APD S1 & FAQ PR – §1 Phasage / §6 AR, Section C (calcul transitoire 2027-2028)",
+    "intro": "2e différenciée • transitoire 2026-2027 seulement • disparition 2027-2028 •",
+    "future": "La <strong>2e année différenciée est maintenue à titre transitoire en 2026-2027 uniquement</strong>, pour les élèves déjà engagés dans le dispositif. À partir de 2027-2028, la 2D disparaît définitivement.",
+    "source": "Projet de circulaire S1 05-06-2026 Ch I pt 1",
     "alerte": "Aucune nouvelle admission en 2e différenciée ne sera possible après la phase transitoire.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -347,9 +347,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "CEB • sans CEB • spécialisé • étranger 12 ans • équivalence • plus d'admission sur âge seul",
     "future": "<p>Il est mis fin à la possibilité d'entrer en secondaire sur la <strong>seule condition d'âge</strong> (12 ans) sans avoir fréquenté de P6, sauf pour certains élèves arrivant de l'étranger sans documents scolaires.</p><p><strong>Peuvent être admis en S1 :</strong></p><ul><li>Élèves <strong>titulaires du CEB</strong> (P6 réussi, CEB anticipé en P5, élèves de 1D ayant réussi le CEB en 2025-2026).</li><li>Élèves <strong>non titulaires du CEB</strong> formellement orientés vers le secondaire par le jury d'école ou le conseil de classe (répartis dans toutes les classes, pas de classe homogène).</li><li>Élèves <strong>provenant de l'étranger</strong> âgés de 12 ans avant le 31/12, ne satisfaisant pas aux dispositions d'équivalence.</li><li>Élèves orientés en S1 suite à une <strong>décision d'équivalence</strong>.</li><li>Élèves <strong>venant du spécialisé</strong> orientés en S1 ordinaire par leur conseil de classe, même sans CEB.</li></ul>",
-    "source": "APD S1 & FAQ PR – §3 Conditions d'admission en S1",
+    "source": "Projet de circulaire S1 05-06-2026 Ch IV pt 1",
     "alerte": "Les élèves sans CEB ou avec échecs partiels doivent être répartis dans l'ensemble des classes de S1. Aucune classe regroupant uniquement ce type d'élèves n'est autorisée.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -360,11 +360,11 @@ const DB_DEFAULT = [
     "sujet": "Maintien en S1 : procédure exceptionnelle",
     "intro": "maintien S1 • exceptionnel • DAccE • CPMS • maximum 1 fois au DI",
     "actuelle": "",
-    "future": "<p>Le maintien en S1 est possible mais devient </p><p><strong>exceptionnel et soumis à une procédure formalisée</strong></p><p> : avis motivé du conseil de classe (documenté 3x dans le DAccE), consultation obligatoire des parents, rapport transmis au Centre PMS. </p>",
-    "source": "APD S1 – Art. 13",
+    "future": "<p>Le maintien en S1 est possible mais devient </p><p><strong>exceptionnel et soumis à une procédure formalisée</strong></p><p> : avis motivé du conseil de classe (documenté 3x dans le DAccE :  o BS 1 : du 5e lundi de la rentrée scolaire au vendredi qui suit les congés d’automne, o	BS 2 :  du 4e lundi qui suit les congés d’hiver au vendredi qui suit les congés de détente, o	BS 3 : du 4e lundi qui suit les congés de printemps au dernier mercredi de l’année scolaire). Accès via <strong>Mon Espace FWB</strong>. consultation obligatoire des parents, rapport transmis au Centre PMS. </p>",
+    "source": "Projet de circulaire S1 05-06-2026 Ch III pt 7",
     "alerte": "La procédure de maintien doit être documentée et transmise dans le DAccE. Le Centre PMS doit être impliqué dès le signalement.",
     "visible": true,
-    "date_maj": "01/04/2026"
+    "date_maj": "11/06/2026"
   },
   {
     "id": "pers_ct_numerique",
@@ -373,10 +373,10 @@ const DB_DEFAULT = [
     "sujet": "Fonction de CT Numérique DI – Dispositif transitoire",
     "statut": "Accord / Projet",
     "intro": "CT Numérique DI • basculement CT Informatique DI • appel candidatures CESS • certificat 12 ECTS • 2029-2030",
-    "future": "<p>Des mesures transitoires facilitent la reconversion vers la fonction de <strong>CT Numérique DI</strong> :</p><ol><li><strong>Basculement automatique</strong> : enseignants nommés/définitifs ou temporaires prioritaires en CT Informatique DI au 23 août 2026.</li><li><strong>Appel à candidatures</strong> : ouvert aux CT/PP DI (nommés/définitifs ou temporaires prioritaires) possédant le CESS, avant le 23 août 2026.</li><li><strong>Primo-recrutement</strong> sur base de la nouvelle fiche-titre (Primoweb).</li></ol><p>Pour conserver l'ancienneté acquise, l'enseignant doit obtenir le <strong>certificat en Formation Numérique (12 ECTS)</strong>, organisé par l'enseignement pour adultes, avant la rentrée 2029-2030.</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section F (Numérique – personnel)",
+    "future": "<p>Des mesures transitoires facilitent la reconversion vers la fonction de <strong>CT Numérique DI</strong> :</p><ol><li><strong>Basculement automatique</strong> : enseignants nommés/définitifs ou temporaires prioritaires en CT Informatique DI au 23 août 2026.</li><li><strong>Appel à candidatures</strong> : ouvert aux CT/PP DI et après aux CG math DI (nommés/définitifs ou temporaires prioritaires) possédant le CESS, avant le 23 août 2026 (Cf appel du PO pour la date de clôture!).</li><li><strong>Primo-recrutement</strong> sur base de la nouvelle fiche-titre (Primoweb).</li></ol><p>Pour conserver l'ancienneté acquise, l'enseignant doit obtenir le <strong>certificat en Formation Numérique (12 ECTS)</strong>, organisé par l'enseignement pour adultes, avant la rentrée 2029-2030.</p>",
+    "source": "Projet de circulaire S1 05-06-2026 Formation Ch VIII & Titres et fonctions : Partie 2, Ch IV",
     "alerte": "Les directions doivent identifier les membres du personnel concernés et planifier leur accès au certificat 12 ECTS. Candidature au PO avant le 23 août 2026.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -387,9 +387,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "CT FMTT DI • basculement CT Éducation technologique • appel candidatures CESS • IFPC janvier 2027 • 2029-2030",
     "future": "<p>Attribution de la fonction <strong>CT FMTT DI</strong> selon un ordre de priorité strict :</p><ol><li><strong>Basculement automatique</strong> : enseignants nommés/définitifs ou temporaires prioritaires en CT Éducation technologique DI au 23 août 2026 (maintien du titre, ancienneté et barème).</li><li><strong>Appel à candidatures</strong> (mesure transitoire 2026-2029) : CT/PP DI possédant le CESS, candidature avant le 23 août 2026. Classement par ancienneté au PO (nommés/définitifs &gt; TP avec titre pédagogique &gt; TP sans titre).</li><li><strong>Primo-recrutement</strong> sur base de la nouvelle fiche-titre (Primoweb) si le poste reste vacant.</li></ol><p>Formation <strong>obligatoire IFPC</strong> à suivre avant la rentrée 2029-2030 pour conserver l'ancienneté. Démarrage prévu à partir de <strong>janvier 2027</strong>.</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section F (FMTT – personnel)",
+    "source": "Projet de circulaire S1 05-06-2026 Formation Ch VIII & Titres et fonctions : Partie 2, Ch III",
     "alerte": "Le PO doit lancer l'appel à candidatures et réaliser le classement avant le 23 août 2026. Ce classement restera valable pour les années 2026-2027, 2027-2028 et 2028-2029.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   },
   {
@@ -400,9 +400,9 @@ const DB_DEFAULT = [
     "statut": "Accord / Projet",
     "intro": "ECA • CG Éducation plastique DI • CG Éducation musicale DI • CT Expression théâtrale DI • accroche transitoire • Primoweb",
     "future": "<p>À titre transitoire, dans l'attente de la mise à jour du référentiel ECA, une <strong>accroche multiple commune</strong> est permise. Peuvent être rattachées au cours d'ECA les fonctions suivantes :</p><ul><li>CG Éducation plastique DI</li><li>CG Éducation musicale DI</li><li>CT Expression théâtrale DI</li></ul><p>Ces accroches seront publiées dès l'adoption de l'arrêté du Gouvernement fixant l'accroche cours-fonction pour ECA (consultable sur <strong>Primoweb</strong>). À ce stade, <strong>il n'existe pas de certificat ECA</strong> permettant d'élargir les compétences vers d'autres disciplines d'ECA.</p>",
-    "source": "APD S1 & FAQ PR – §2 Grille-horaire, Section G (ECA – personnel)",
+    "source": "Projet de circulaire S1 05-06-2026 Formation Ch VIII & Titres et fonctions : Partie 2, Ch VI",
     "alerte": "Dans l'attente des textes définitifs, les directions doivent veiller à ce que chaque élève bénéficie des 3 modes d'expression chaque année.",
-    "date_maj": "01/04/2026",
+    "date_maj": "11/06/2026",
     "visible": true
   }
 ]
